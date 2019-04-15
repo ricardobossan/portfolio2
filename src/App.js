@@ -1,28 +1,25 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Button from '@material-ui/core/Button';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+{
+  /**
+   * TODOS:
+   *
+   * @todo Create Light and Dark [themes](https://material-ui.com/customization/themes/), set upon Redux global state.
+   */
+}
+
+function App() {
+  return (
+    <React.Fragment>
+      <CssBaseline />
+      <Button variant="contained" color="primary">
+        Hello World
+      </Button>
+    </React.Fragment>
+  );
 }
 
 export default App;

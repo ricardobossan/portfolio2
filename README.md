@@ -1,3 +1,22 @@
+# Online Portfolio 2.0
+
+## What is this project for?
+
+This is an online portfolio, to showcase my projects. It's going to be built with Reactjs and Material UI.
+
+## Steps
+
+### Boilerplate
+
+- Generate basic project with `create-react-app`.
+- Erase generic files that I'm not going to use.
+
+### [Material UI Experimentation][mui-get-started]
+
+- Normalize with [css baseline][mui-css-baseline]
+
+<!-- CREATE-REACT-APP BOILERPLATE BELOW -->
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -66,3 +85,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+[mui-get-started]: https://material-ui.com/getting-started/installation/
+[mui-css-baseline]: https://material-ui.com/style/css-baseline/
