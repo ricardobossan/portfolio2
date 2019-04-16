@@ -10,6 +10,17 @@ This is an online portfolio, to showcase my projects. It's going to be built wit
 
 - Generate basic project with `create-react-app`.
 - Erase generic files that I'm not going to use.
+- Create `/src`'s subfolders:
+
+```
+/src
+  /components
+    App.js // import { footer, header } from './Layout'
+    /layout
+      footer.js
+      header.js
+      index.js // export it's folder's components.
+```
 
 ### [Material UI Experimentation][mui-get-started]
 
