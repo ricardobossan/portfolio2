@@ -43,7 +43,8 @@ const tutorialSteps = [
 const styles = theme => ({
   root: {
     maxWidth: 400,
-    flexGrow: 1
+    flexGrow: 1,
+    borderBottom: '1px solid rgba(0,0,0,0.14)'
   },
   header: {
     display: 'flex',
