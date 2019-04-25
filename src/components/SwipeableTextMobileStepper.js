@@ -59,6 +59,9 @@ const styles = theme => ({
     maxWidth: 400,
     overflow: 'hidden',
     width: '100%'
+  },
+  myProjects: {
+    background: '#fdfad6'
   }
 });
 

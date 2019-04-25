@@ -54,7 +54,7 @@ function ButtonAppBar(props) {
     <header className={classes.root}>
       <AppBar className={classes.AppBar} position="static">
         <Toolbar>
-          <Grid direction="row">
+          <Grid container direction="row">
             <Button
               className={classes.menuButton}
               color="inherit"
@@ -63,13 +63,13 @@ function ButtonAppBar(props) {
               <MenuIcon />
             </Button>
             <Typography variant="h6" color="inherit" className={classes.grow}>
-              Ricardo Bossan
+              RB
             </Typography>
           </Grid>
-          <Grid container xs="9" direction="row">
+          <Grid container direction="row">
             <Grid item>
               <IconButton
-                className={classes.button}
+                className={classes.iconButton}
                 aria-label="Linkedin"
                 color="inherit"
               >
@@ -78,7 +78,7 @@ function ButtonAppBar(props) {
             </Grid>
             <Grid item>
               <IconButton
-                className={classes.button}
+                className={classes.iconButton}
                 aria-label="Twitter"
                 color="inherit"
               >
@@ -87,7 +87,7 @@ function ButtonAppBar(props) {
             </Grid>
             <Grid item>
               <IconButton
-                className={classes.button}
+                className={classes.iconButton}
                 aria-label="Mail"
                 color="inherit"
               >

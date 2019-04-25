@@ -1,10 +1,9 @@
 import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
-import { Header, Hero, Footer } from './layout/';
+import { Header, Hero, Footer, MyProjects } from './layout/';
 import Portfolio from './Portfolio';
 
-import { render } from 'react-dom';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 {
   /* @todo add a light/dark theme switch, with a Redux store 
@@ -70,6 +69,7 @@ function App() {
         <CssBaseline />
         <Header />
         <Hero />
+        <MyProjects />
         <Portfolio />
         <Footer />
       </React.Fragment>
