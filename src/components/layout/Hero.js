@@ -30,10 +30,14 @@ const styles = theme => ({
   heroMessage: {
     ...theme.mixins.gutters(),
     position: 'absolute',
-    bottom: '20%',
+    width: '100%',
+    bottom: '70%',
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
     background: '#ffffff00'
+  },
+  scrollDown: {
+    textAlign: 'center'
   },
   ChevronTripleDown: {
     color: '#fff'
@@ -55,8 +59,8 @@ function Hero(props) {
       </div>
 
       <Paper className={classes.heroMessage} elevation={0}>
-        <Typography variant="h4" component="h3">
-          Scroll down for projects I worked on.
+        <Typography className={classes.scrollDown} variant="h4" component="h3">
+          Scroll down for projects.
         </Typography>
         <ChevronTripleDown />
       </Paper>

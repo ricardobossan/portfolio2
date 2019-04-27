@@ -20,7 +20,7 @@ function MyProjects(props) {
         My Projects
       </Typography>
       <Typography className={classes.typography} variant="h5">
-        Swipe on slides for details
+        Touch or click on a project to see its details.
       </Typography>
     </div>
   );

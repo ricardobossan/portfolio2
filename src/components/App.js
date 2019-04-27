@@ -1,15 +1,17 @@
 import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
-/** @theme palette https://material.io/tools/color/#!/?view.left=1&view.right=0&primary.color=2d5e72&secondary.color=0d3645 */
-import theme from './theme';
+import '../styles/styles.css';
+
+import theme from './themes/theme';
 
 import { Header, Hero, Footer, MyProjects } from './layout/';
 import Portfolio from './Portfolio';
+import Message from './Message';
 
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
-console.log(theme);
+/** @theme palette https://material.io/tools/color/#!/?view.left=1&view.right=0&primary.color=2d5e72&secondary.color=0d3645 */
 const mainTheme = createMuiTheme(theme);
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
         <Hero />
         <MyProjects />
         <Portfolio />
+        <Message />
         <Footer />
       </React.Fragment>
     </MuiThemeProvider>
