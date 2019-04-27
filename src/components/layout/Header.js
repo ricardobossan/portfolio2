@@ -10,20 +10,6 @@ import MenuIcon from '@material-ui/icons/Menu';
 
 import { withStyles } from '@material-ui/core/styles';
 
-/**
- * @todo make the Header `background` style change to `#75c9d2`, when it's `top.value > 100%`
- *
- * Attempt:
- *
- *  ```
- *  if (this.style.top >= '100px') {
- *    this.setAttribute('style', 'background:#75c9d2');
- *  }
- *  ```
- *
- *
- */
-
 const styles = theme => ({
   root: {
     flexGrow: 1,
@@ -44,7 +30,9 @@ const styles = theme => ({
   },
   AppBar: {
     position: 'fixed',
-    background: '#00000050'
+    background: '#00000090'
+    /*     background: '#2d5f72'
+     */
   }
 });
 
@@ -55,13 +43,6 @@ function ButtonAppBar(props) {
       <AppBar className={classes.AppBar} position="static">
         <Toolbar>
           <Grid container direction="row">
-            <Button
-              className={classes.menuButton}
-              color="inherit"
-              aria-label="Menu"
-            >
-              <MenuIcon />
-            </Button>
             <Typography variant="h6" color="inherit" className={classes.grow}>
               RB
             </Typography>

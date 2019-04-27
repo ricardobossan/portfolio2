@@ -9,8 +9,13 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 const styles = {
   root: {
-    width: '98%',
-    marginTop: '1px'
+    position: 'fixed',
+    bottom: 0,
+    width: '100%',
+    marginTop: '1px',
+    background: '#00000090'
+    /*     background: '#2d5f72'
+     */
   }
 };
 
@@ -34,9 +39,9 @@ class Footer extends React.Component {
         showLabels
         className={classes.root}
       >
-        <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
-        <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
-        <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
+        <BottomNavigationAction label="Top" icon={<RestoreIcon />} />
+        <BottomNavigationAction label="Projects" icon={<FavoriteIcon />} />
+        <BottomNavigationAction label="Contact" icon={<FavoriteIcon />} />
       </BottomNavigation>
     );
   }

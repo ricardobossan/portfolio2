@@ -12,6 +12,8 @@ import ChevronTripleDown from '@material-ui/icons/ArrowDownward';
 
 const styles = theme => ({
   root: {
+    height: '100vh',
+    position: 'relative',
     ...theme.mixins.gutters(),
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2
