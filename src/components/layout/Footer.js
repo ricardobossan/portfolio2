@@ -6,7 +6,6 @@ import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import WorkIcon from '@material-ui/icons/Work';
 import ContactsIcon from '@material-ui/icons/Contacts';
-import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 const styles = {
   root: {
@@ -17,6 +16,9 @@ const styles = {
     background: '#00000090'
     /*     background: '#2d5f72'
      */
+  },
+  materialIcons: {
+    color: '#FFF'
   }
 };
 
@@ -40,9 +42,21 @@ class Footer extends React.Component {
         showLabels
         className={classes.root}
       >
-        <BottomNavigationAction label="Top" icon={<ArrowUpwardIcon />} />
-        <BottomNavigationAction label="Projects" icon={<WorkIcon />} />
-        <BottomNavigationAction label="Contact" icon={<ContactsIcon />} />
+        <BottomNavigationAction
+          className={classes.materialIcons}
+          label="Top"
+          icon={<ArrowUpwardIcon />}
+        />
+        <BottomNavigationAction
+          className={classes.materialIcons}
+          label="Projects"
+          icon={<WorkIcon />}
+        />
+        <BottomNavigationAction
+          className={classes.materialIcons}
+          label="Contact"
+          icon={<ContactsIcon />}
+        />
       </BottomNavigation>
     );
   }
