@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import RestoreIcon from '@material-ui/icons/Restore';
-import FavoriteIcon from '@material-ui/icons/Favorite';
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
+import WorkIcon from '@material-ui/icons/Work';
+import ContactsIcon from '@material-ui/icons/Contacts';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 const styles = {
@@ -39,9 +40,9 @@ class Footer extends React.Component {
         showLabels
         className={classes.root}
       >
-        <BottomNavigationAction label="Top" icon={<RestoreIcon />} />
-        <BottomNavigationAction label="Projects" icon={<FavoriteIcon />} />
-        <BottomNavigationAction label="Contact" icon={<FavoriteIcon />} />
+        <BottomNavigationAction label="Top" icon={<ArrowUpwardIcon />} />
+        <BottomNavigationAction label="Projects" icon={<WorkIcon />} />
+        <BottomNavigationAction label="Contact" icon={<ContactsIcon />} />
       </BottomNavigation>
     );
   }
