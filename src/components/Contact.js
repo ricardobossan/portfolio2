@@ -1,12 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
-import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
+  root: {
+    height: '80vh',
+    marginTop: '100px'
+  },
   container: {
     display: 'flex',
     flexWrap: 'wrap'
@@ -19,34 +21,24 @@ const styles = theme => ({
   },
   menu: {
     width: 200
+  },
+  contactMe: {
+    textAlign: 'center',
+    margin: '30px auto 30px auto'
+  },
+  Button: {
+    textTransform: 'none',
+    display: 'flex',
+    paddingTop: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 2
   }
 });
 
-const currencies = [
-  {
-    value: 'USD',
-    label: '$'
-  },
-  {
-    value: 'EUR',
-    label: '€'
-  },
-  {
-    value: 'BTC',
-    label: '฿'
-  },
-  {
-    value: 'JPY',
-    label: '¥'
-  }
-];
-
-class TextFields extends React.Component {
+class Contact extends React.Component {
   state = {
     name: 'Cat in the Hat',
     age: '',
-    multiline: 'Controlled',
-    currency: 'EUR'
+    multiline: 'Controlled'
   };
 
   handleChange = name => event => {
@@ -57,8 +49,10 @@ class TextFields extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div>
-        <Typography variant="h3">Contact Me</Typography>
+      <div className={classes.root}>
+        <Typography className={classes.contactMe} variant="h3">
+          Contact Me
+        </Typography>
         <form className={classes.container} autoComplete="off">
           <TextField
             id="name"
@@ -85,13 +79,17 @@ class TextFields extends React.Component {
             margin="normal"
           />
         </form>
+        <div style={{ marginTop: '50px' }}>
+          <Button className={classes.Button} elevation={1}>
+            <Typography variant="h5">LinkedIn</Typography>
+          </Button>
+          <Button className={classes.Button} elevation={1}>
+            <Typography variant="h5">Twitter</Typography>
+          </Button>
+        </div>
       </div>
     );
   }
 }
 
-TextFields.propTypes = {
-  classes: PropTypes.object.isRequired
-};
-
-export default withStyles(styles)(TextFields);
+export default withStyles(styles)(Contact);

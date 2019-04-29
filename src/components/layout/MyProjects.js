@@ -5,7 +5,9 @@ import { withStyles } from '@material-ui/core/styles';
 const styles = theme => ({
   root: {
     background: '#75c9d2',
-    textAlign: 'center'
+    textAlign: 'center',
+    marginTop: '60px',
+    paddingTop: '10px'
   },
   typography: {
     color: '#656455'
