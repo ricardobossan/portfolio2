@@ -7,7 +7,7 @@ import theme from './themes/theme';
 
 import { Header, Hero, Footer, MyProjects } from './layout/';
 import Portfolio from './Portfolio';
-import Message from './Message';
+import Contact from './Contact';
 
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
@@ -22,7 +22,7 @@ function App() {
         <Hero />
         <MyProjects />
         <Portfolio />
-        <Message />
+        <Contact />
         <Footer />
       </React.Fragment>
     </MuiThemeProvider>
