@@ -1,5 +1,6 @@
 import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 
 import '../styles/styles.css';
 
@@ -19,10 +20,13 @@ function App() {
       <React.Fragment>
         <CssBaseline />
         <Header />
-        <Hero />
-        <MyProjects />
-        <Portfolio />
-        <Contact />
+        <Router hashType="noslash">
+          <div>
+            <Route exact path="/" component={Hero} />
+            <Route path="/portfolio" component={MyProjects} />
+            <Route path="/contact" component={Contact} />
+          </div>
+        </Router>
         <Footer />
       </React.Fragment>
     </MuiThemeProvider>

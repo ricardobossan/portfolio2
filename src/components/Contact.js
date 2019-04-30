@@ -6,8 +6,8 @@ import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
   root: {
-    height: '80vh',
-    marginTop: '100px'
+    height: '100vh',
+    paddingTop: '70px'
   },
   container: {
     display: 'flex',

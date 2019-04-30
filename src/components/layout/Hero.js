@@ -13,7 +13,7 @@ import ChevronTripleDown from '@material-ui/icons/ArrowDownward';
 const styles = theme => ({
   root: {
     height: '100vh',
-    position: 'relative',
+    position: 'static',
     ...theme.mixins.gutters(),
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2
@@ -31,10 +31,10 @@ const styles = theme => ({
   },
   heroMessage: {
     ...theme.mixins.gutters(),
-    position: 'absolute',
+    position: 'static',
     width: '100%',
     bottom: '70%',
-    paddingTop: theme.spacing.unit * 2,
+    paddingTop: theme.spacing.unit * 12,
     paddingBottom: theme.spacing.unit * 2,
     background: '#ffffff00'
   },
@@ -50,8 +50,8 @@ function Hero(props) {
   const { classes } = props;
 
   return (
-    <div>
-      <div style={{ maxWidth: '960px', margin: 'auto', width: '100%' }}>
+    <div className={classes.root}>
+      <div>
         <img
           className={classes.img}
           style={{ width: '100%' }}

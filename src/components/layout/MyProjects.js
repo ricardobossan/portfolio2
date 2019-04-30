@@ -2,16 +2,16 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 
+import Portfolio from '../Portfolio';
+
 const styles = theme => ({
   root: {
-    background: '#75c9d2',
+    background: '#2d5f72',
     textAlign: 'center',
-    marginTop: '60px',
-    paddingTop: '10px'
+    marginTop: '20px',
+    paddingTop: '20px'
   },
-  typography: {
-    color: '#656455'
-  }
+  typography: {}
 });
 
 function MyProjects(props) {
@@ -24,6 +24,7 @@ function MyProjects(props) {
       <Typography className={classes.typography} variant="h5">
         Touch or click on a project to see its details.
       </Typography>
+      <Portfolio />
     </div>
   );
 }
