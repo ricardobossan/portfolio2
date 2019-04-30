@@ -19,7 +19,7 @@ function MyProjects(props) {
     <div className={classes.root}>
       <div className={classes.callToAction}>
         <Typography className={classes.typography} variant="h5">
-          Touch on a project to see its details.
+          Tap on a project to start it!
         </Typography>
       </div>
       <Portfolio />

@@ -5,7 +5,7 @@ import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import WorkIcon from '@material-ui/icons/Work';
-import ContactsIcon from '@material-ui/icons/Contacts';
+import PersonIcon from '@material-ui/icons/Person';
 
 const styles = {
   root: {
@@ -54,7 +54,7 @@ class Footer extends React.Component {
         <BottomNavigationAction
           className={classes.materialIcons}
           label="Contact"
-          icon={<ContactsIcon />}
+          icon={<PersonIcon />}
         />
       </BottomNavigation>
     );
