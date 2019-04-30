@@ -29,8 +29,8 @@ const styles = theme => ({
   Button: {
     textTransform: 'none',
     display: 'flex',
-    paddingTop: theme.spacing.unit * 2,
-    paddingBottom: theme.spacing.unit * 2
+    paddingTop: theme.spacing.unit,
+    paddingBottom: theme.spacing.unit
   }
 });
 
@@ -82,6 +82,9 @@ class Contact extends React.Component {
         <div style={{ marginTop: '50px' }}>
           <Button className={classes.Button} elevation={1}>
             <Typography variant="h5">LinkedIn</Typography>
+          </Button>
+          <Button className={classes.Button} elevation={1}>
+            <Typography variant="h5">GitHub</Typography>
           </Button>
           <Button className={classes.Button} elevation={1}>
             <Typography variant="h5">Twitter</Typography>

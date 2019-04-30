@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import ChevronTripleDown from '@material-ui/icons/ArrowDownward';
 
 /**
  * @todo choose better typografy for `heroMessage`.
@@ -13,14 +12,11 @@ import ChevronTripleDown from '@material-ui/icons/ArrowDownward';
 const styles = theme => ({
   root: {
     height: '100vh',
-    position: 'static',
-    ...theme.mixins.gutters(),
-    paddingTop: theme.spacing.unit * 2,
-    paddingBottom: theme.spacing.unit * 2
+    position: 'static'
   },
   img: {
     opacity: '0.9',
-    position: 'absolute',
+    position: 'fixed',
     width: '140%',
     height: '140%',
     objectFit: 'cover',
@@ -32,10 +28,10 @@ const styles = theme => ({
   heroMessage: {
     ...theme.mixins.gutters(),
     position: 'static',
-    width: '100%',
-    bottom: '70%',
-    paddingTop: theme.spacing.unit * 12,
-    paddingBottom: theme.spacing.unit * 2,
+    height: '100vh',
+    paddingTop: theme.spacing.unit * 14,
+    paddingLeft: theme.spacing.unit * 8,
+    paddingRight: theme.spacing.unit * 8,
     background: '#ffffff00'
   },
   scrollDown: {
@@ -61,10 +57,9 @@ function Hero(props) {
       </div>
 
       <Paper className={classes.heroMessage} elevation={0}>
-        <Typography className={classes.scrollDown} variant="h4" component="h3">
+        <Typography className={classes.scrollDown} variant="h4" component="h4">
           Scroll down for projects.
         </Typography>
-        <ChevronTripleDown />
       </Paper>
     </div>
   );

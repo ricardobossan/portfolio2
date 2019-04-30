@@ -13,9 +13,8 @@ const styles = {
     bottom: 0,
     width: '100%',
     marginTop: '1px',
-    background: '#00000090'
-    /*     background: '#2d5f72'
-     */
+    /* background: '#00000090' */
+    background: '#0d3645'
   },
   materialIcons: {
     color: '#FFF'

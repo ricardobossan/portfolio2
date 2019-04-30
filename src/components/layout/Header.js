@@ -29,9 +29,8 @@ const styles = theme => ({
   },
   AppBar: {
     position: 'fixed',
-    background: '#00000090'
-    /*     background: '#2d5f72'
-     */
+    /*background:  '#00000090' */
+    background: '#0d3645'
   }
 });
 
@@ -47,7 +46,7 @@ function ButtonAppBar(props) {
             </Typography>
           </Grid>
           <Grid container direction="row">
-            <Grid item>
+            <Grid xs="1" xs="3" item>
               <IconButton
                 className={classes.iconButton}
                 aria-label="Linkedin"
@@ -56,7 +55,16 @@ function ButtonAppBar(props) {
                 <i className="fab fa-linkedin-in" />
               </IconButton>
             </Grid>
-            <Grid item>
+            <Grid xs="3" item>
+              <IconButton
+                className={classes.iconButton}
+                aria-label="GitHub"
+                color="inherit"
+              >
+                <i className="fab fa-github" />
+              </IconButton>
+            </Grid>
+            <Grid xs="3" item>
               <IconButton
                 className={classes.iconButton}
                 aria-label="Twitter"
@@ -65,7 +73,7 @@ function ButtonAppBar(props) {
                 <i className="fab fa-twitter" />
               </IconButton>
             </Grid>
-            <Grid item>
+            <Grid xs="3" item>
               <IconButton
                 className={classes.iconButton}
                 aria-label="Mail"

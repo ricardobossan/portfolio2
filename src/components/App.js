@@ -21,11 +21,11 @@ function App() {
         <CssBaseline />
         <Header />
         <Router hashType="noslash">
-          <div>
+          <Route>
             <Route exact path="/" component={Hero} />
             <Route path="/portfolio" component={MyProjects} />
             <Route path="/contact" component={Contact} />
-          </div>
+          </Route>
         </Router>
         <Footer />
       </React.Fragment>

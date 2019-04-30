@@ -8,22 +8,20 @@ const styles = theme => ({
   root: {
     background: '#2d5f72',
     textAlign: 'center',
-    marginTop: '20px',
-    paddingTop: '20px'
+    paddingTop: '0px'
   },
-  typography: {}
+  callToAction: { padding: '80px 45px 45px 45px' }
 });
 
 function MyProjects(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <Typography className={classes.typography} variant="h4">
-        My Projects
-      </Typography>
-      <Typography className={classes.typography} variant="h5">
-        Touch or click on a project to see its details.
-      </Typography>
+      <div className={classes.callToAction}>
+        <Typography className={classes.typography} variant="h5">
+          Touch on a project to see its details.
+        </Typography>
+      </div>
       <Portfolio />
     </div>
   );
