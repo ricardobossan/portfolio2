@@ -7,7 +7,8 @@ import Button from '@material-ui/core/Button';
 const styles = theme => ({
   root: {
     height: '100vh',
-    paddingTop: '70px'
+    paddingTop: '70px',
+    background: '#2d5f72'
   },
   container: {
     display: 'flex',
@@ -47,7 +48,7 @@ class Contact extends React.Component {
 
   render() {
     const { classes } = this.props;
-
+    console.log(window.screen);
     return (
       <div className={classes.root}>
         <Typography className={classes.contactMe} variant="h3">

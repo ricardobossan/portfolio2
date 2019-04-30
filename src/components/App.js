@@ -1,13 +1,12 @@
 import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
-
+/* import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+ */
 import '../styles/styles.css';
 
 import theme from './themes/theme';
 
 import { Header, Hero, Footer, MyProjects } from './layout/';
-import Portfolio from './Portfolio';
 import Contact from './Contact';
 
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
@@ -20,13 +19,17 @@ function App() {
       <React.Fragment>
         <CssBaseline />
         <Header />
-        <Router hashType="noslash">
+        <Hero />
+        <MyProjects />
+        <Contact />
+        {/*         <Router hashType="noslash">
           <Route>
             <Route exact path="/" component={Hero} />
             <Route path="/portfolio" component={MyProjects} />
             <Route path="/contact" component={Contact} />
           </Route>
         </Router>
+ */}{' '}
         <Footer />
       </React.Fragment>
     </MuiThemeProvider>
