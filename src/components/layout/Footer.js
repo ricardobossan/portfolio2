@@ -26,6 +26,8 @@ class Footer extends React.Component {
     value: 0
   };
 
+  /*   handleScroll = e;
+   */
   handleChange = (event, value) => {
     this.setState({ value });
   };
@@ -42,16 +44,19 @@ class Footer extends React.Component {
         className={classes.root}
       >
         <BottomNavigationAction
+          onClick={this.handleScroll}
           className={classes.materialIcons}
           label="Top"
           icon={<ArrowUpwardIcon />}
         />
         <BottomNavigationAction
+          onClick={this.handleScroll}
           className={classes.materialIcons}
           label="Projects"
           icon={<WorkIcon />}
         />
         <BottomNavigationAction
+          onClick={this.handleScroll}
           className={classes.materialIcons}
           label="Contact"
           icon={<PersonIcon />}

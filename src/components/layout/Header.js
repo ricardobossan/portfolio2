@@ -46,7 +46,7 @@ function ButtonAppBar(props) {
             </Typography>
           </Grid>
           <Grid container direction="row">
-            <Grid xs="1" xs="3" item>
+            <Grid xs="3" item>
               <IconButton
                 className={classes.iconButton}
                 aria-label="Linkedin"

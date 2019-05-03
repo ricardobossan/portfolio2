@@ -16,7 +16,7 @@ const styles = theme => ({
   },
   img: {
     opacity: '0.9',
-    position: 'fixed',
+    position: 'absolute',
     width: '140%',
     height: '140%',
     objectFit: 'cover',
