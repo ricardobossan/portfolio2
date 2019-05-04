@@ -46,7 +46,7 @@ function ButtonAppBar(props) {
             </Typography>
           </Grid>
           <Grid container direction="row">
-            <Grid xs="3" item>
+            <Grid xs={3} item>
               <IconButton
                 className={classes.iconButton}
                 aria-label="Linkedin"
@@ -55,7 +55,7 @@ function ButtonAppBar(props) {
                 <i className="fab fa-linkedin-in" />
               </IconButton>
             </Grid>
-            <Grid xs="3" item>
+            <Grid xs={3} item>
               <IconButton
                 className={classes.iconButton}
                 aria-label="GitHub"
@@ -64,7 +64,7 @@ function ButtonAppBar(props) {
                 <i className="fab fa-github" />
               </IconButton>
             </Grid>
-            <Grid xs="3" item>
+            <Grid xs={3} item>
               <IconButton
                 className={classes.iconButton}
                 aria-label="Twitter"
@@ -73,7 +73,7 @@ function ButtonAppBar(props) {
                 <i className="fab fa-twitter" />
               </IconButton>
             </Grid>
-            <Grid xs="3" item>
+            <Grid xs={3} item>
               <IconButton
                 className={classes.iconButton}
                 aria-label="Mail"

@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
@@ -35,7 +36,7 @@ class Footer extends React.Component {
   render() {
     const { classes } = this.props;
     const { value } = this.state;
-
+    console.log();
     return (
       <BottomNavigation
         value={value}
@@ -70,4 +71,6 @@ Footer.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Footer);
+const mapStateToProps = state => state;
+
+export default connect(mapStateToProps)(withStyles(styles)(Footer));
