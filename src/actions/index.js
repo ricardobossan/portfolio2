@@ -3,19 +3,19 @@ import { MOVE_TOP, MOVE_PROJECTS, MOVE_CONTACT } from './types';
 export const viewTop = () => {
   return {
     type: MOVE_TOP,
-    dispatch: 0
+    dispatch: { view: 0, screenX: 0, screenY: 0 }
   };
 };
 
 export const viewProjects = () => {
   return {
     type: MOVE_PROJECTS,
-    dispatch: 1
+    dispatch: { view: 1, screenX: 0, screenY: window.screen.availHeight }
   };
 };
 export const viewContact = () => {
   return {
     type: MOVE_CONTACT,
-    dispatch: 2
+    dispatch: { view: 2, screenX: 0, screenY: window.screen.availHeight * 10 }
   };
 };

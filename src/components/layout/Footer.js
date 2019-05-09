@@ -27,9 +27,12 @@ const styles = {
 };
 
 class Footer extends React.Component {
-  /*   handleViewSwitch = e;
-   */
-  handleScroll = e => {};
+  handleViewSwitch = action => {
+    console.log(this.props, action().dispatch.screenY);
+    window.scrollTo(action().dispatch.screenX, action().dispatch.screenY);
+  };
+
+  /* handleScroll = e => {}; */
 
   render() {
     const {
@@ -39,7 +42,6 @@ class Footer extends React.Component {
       viewProjects,
       viewContact
     } = this.props;
-    console.log(this.props);
     return (
       <BottomNavigation
         value={viewSelect.view}
@@ -48,19 +50,19 @@ class Footer extends React.Component {
         className={classes.root}
       >
         <BottomNavigationAction
-          onClick={viewTop}
+          onClick={() => this.handleViewSwitch(viewTop)}
           className={classes.materialIcons}
           label="Top"
           icon={<ArrowUpwardIcon />}
         />
         <BottomNavigationAction
-          onClick={viewProjects}
+          onClick={() => this.handleViewSwitch(viewProjects)}
           className={classes.materialIcons}
           label="Projects"
           icon={<WorkIcon />}
         />
         <BottomNavigationAction
-          onClick={viewContact}
+          onClick={() => this.handleViewSwitch(viewContact)}
           className={classes.materialIcons}
           label="Contact"
           icon={<PersonIcon />}

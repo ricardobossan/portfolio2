@@ -157,13 +157,24 @@ window.scrollTo(0, (window.screen.availHeight*10) )
 ~~- [Create a Redux Store](https://redux.js.org/introduction/getting-started)~~
 ~~- [Connect Footer.js to Redux](https://react-redux.js.org/api/connect)~~
 ~~- Understand [classes in material ui. Why it was passed as props to Footer.js](https://material-ui.com/#augmenting-your-props-using-withstyles)~~
+
 - [Handle actions>dispatch>reducer>scrolling to the right view](https://redux.js.org/basics/actions)
-  ~~- Should I use [mapDispatchToProps](https://react-redux.js.org/api/connect#mapdispatchtoprops-object-dispatch-ownprops-object). I read that all data from store should be dispatched by actions (flux)~~ 
+  ~~- Should I use [mapDispatchToProps](https://react-redux.js.org/api/connect#mapdispatchtoprops-object-dispatch-ownprops-object). I read that all data from store should be dispatched by actions (flux)~~
   ~~- Selected Footer tab should be determined by Redux's store~~
-  - Make sure both happen:
-    - Clicking an BottomNavigationIcon scrolls to the top of the right view
-    - Scrolling/Swiping to the a view will change BottomNavigation selected tab correspondingly
-      - The Projects tab will be selected if window.screen doesn't exactly match the `vh` of either the views of either the `Hero` or `Contact` components
+
+  - ### **Objective:** Make sure both happen:
+
+    - Clicking an BottomNavigationIcon scrolls to the top of the respective view
+    - Scrolling/Swiping to a view will change BottomNavigation selected tab correspondingly
+      - The Projects tab will be selected if window.screen doesn't exactly match the `window.screen` of the views of either the `Hero` or `Contact` components
+
+  - ### **Implementation:** So, basically, you'll be able to **either**:
+    ~~- click button **-\>** changes `selectValue`'s redux state (`viewSelect` action) **-\>** goes to view (action that goes to the view onClick. **So**, add logic that moves to view into the `viewSelect` action).~~
+    ~~- **TASK: create action/reducer**~~
+    - Goes to view by scrolling/swiping **-\>** also changes `selectValue`'s redux state, which **-\>** changes `BottomNavigation`'s value.
+      - Selected button matches view. Default selected button is `Projects`, if view not `top` or `contact` (**or default is `top`. If `!top` && `!contact`, is `project`**))
+        - **TASK: create action/reducer**
+
 - [Use Refs for DOM](https://codesandbox.io/s/v6948pww5y?from-embed)
 - [Use react hooks with redux, to have global state with functional components](https://medium.freecodecamp.org/how-to-integrate-react-hooks-into-your-project-without-changing-your-redux-code-974e6f70f0b0?source=bookmarks---------0---------------------)
 
