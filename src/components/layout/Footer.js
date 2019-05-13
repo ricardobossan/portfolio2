@@ -27,14 +27,17 @@ const styles = {
 };
 
 class Footer extends React.Component {
+  /* test */
   handleViewSwitch = action => {
-    console.log(this.props, action().dispatch.screenY);
-    window.scrollTo(action().dispatch.screenX, action().dispatch.screenY);
+    const { viewSelect } = this.props;
+    action();
+    window.scrollTo(viewSelect.screenX, viewSelect.screenY);
   };
 
   /* handleScroll = e => {}; */
 
   render() {
+    console.log(this.props);
     const {
       classes,
       viewSelect,
@@ -45,7 +48,6 @@ class Footer extends React.Component {
     return (
       <BottomNavigation
         value={viewSelect.view}
-        onChange={this.handleScroll}
         showLabels
         className={classes.root}
       >
