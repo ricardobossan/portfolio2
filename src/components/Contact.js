@@ -48,7 +48,6 @@ class Contact extends React.Component {
 
   render() {
     const { classes } = this.props;
-    console.log(window.screen);
     return (
       <div className={classes.root}>
         <Typography className={classes.contactMe} variant="h3">

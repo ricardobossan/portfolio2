@@ -12,6 +12,8 @@ import PersonIcon from '@material-ui/icons/Person';
 
 import { viewTop, viewProjects, viewContact } from '../../actions';
 
+import store from '../../store';
+
 const styles = {
   root: {
     position: 'fixed',
@@ -27,17 +29,20 @@ const styles = {
 };
 
 class Footer extends React.Component {
-  /* test */
-  handleViewSwitch = action => {
-    const { viewSelect } = this.props;
-    action();
-    window.scrollTo(viewSelect.screenX, viewSelect.screenY);
+  handleViewSwitch = async action => {
+    // "Gambiarra", to call action and, at the same time, save one if it's returned values for scrolling to it, without using async logic.
+    const actionReturnValues = action();
+    // Side effect. Need applyMiddleware and react-thunk, to make the dispatch asyncronous, conditioning side effects to it
+    window.scrollTo({
+      left: 0,
+      top: actionReturnValues.dispatch.screenY,
+      behavior: 'smooth'
+    });
   };
 
   /* handleScroll = e => {}; */
 
   render() {
-    console.log(this.props);
     const {
       classes,
       viewSelect,
