@@ -6,6 +6,8 @@ import PropTypes from 'prop-types';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 
+import Hidden from '@material-ui/core/Hidden';
+
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import WorkIcon from '@material-ui/icons/Work';
 import PersonIcon from '@material-ui/icons/Person';
@@ -51,30 +53,32 @@ class Footer extends React.Component {
       viewContact
     } = this.props;
     return (
-      <BottomNavigation
-        value={viewSelect.view}
-        showLabels
-        className={classes.root}
-      >
-        <BottomNavigationAction
-          onClick={() => this.handleViewSwitch(viewTop)}
-          className={classes.materialIcons}
-          label="Top"
-          icon={<ArrowUpwardIcon />}
-        />
-        <BottomNavigationAction
-          onClick={() => this.handleViewSwitch(viewProjects)}
-          className={classes.materialIcons}
-          label="Projects"
-          icon={<WorkIcon />}
-        />
-        <BottomNavigationAction
-          onClick={() => this.handleViewSwitch(viewContact)}
-          className={classes.materialIcons}
-          label="Contact"
-          icon={<PersonIcon />}
-        />
-      </BottomNavigation>
+      <Hidden lgUp>
+        <BottomNavigation
+          value={viewSelect.view}
+          showLabels
+          className={classes.root}
+        >
+          <BottomNavigationAction
+            onClick={() => this.handleViewSwitch(viewTop)}
+            className={classes.materialIcons}
+            label="Top"
+            icon={<ArrowUpwardIcon />}
+          />
+          <BottomNavigationAction
+            onClick={() => this.handleViewSwitch(viewProjects)}
+            className={classes.materialIcons}
+            label="Projects"
+            icon={<WorkIcon />}
+          />
+          <BottomNavigationAction
+            onClick={() => this.handleViewSwitch(viewContact)}
+            className={classes.materialIcons}
+            label="Contact"
+            icon={<PersonIcon />}
+          />
+        </BottomNavigation>
+      </Hidden>
     );
   }
 }

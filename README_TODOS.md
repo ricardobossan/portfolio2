@@ -1,44 +1,61 @@
 # TODOS <!-- omit in toc -->
 
-## CURRENT @TODO: [Add a store for Footer.state.value, with a Redux store, in order to be able to set all components to act according to the current navigation icon selected, and for screen swipes also change the navigatino icons.](#add-a-store-for-footerstatevalue-with-a-redux-store-in-order-to-be-able-to-set-all-components-to-act-according-to-the-current-navigation-icon-selected-and-for-screen-swipes-also-change-the-navigatino-icons) <!-- omit in toc -->
+**Current _@todo_**: [Tablet (width>=1024px && width <1366px) breakpoint](#tablet-width1024px--width-1366px-breakpoint)
+ <!-- omit in toc -->
 
 ## Index <!-- omit in toc -->
 
+- [~~Find Layout~~](#find-layout)
+- [~~Find Theme With Material Guidance~~](#find-theme-with-material-guidance)
 - [Components](#components)
   - [Header](#header)
-    - [Prototype](#prototype)
+    - [~~Prototype~~](#prototype)
     - [Refinement](#refinement)
-  - [Footer](#footer)
-    - [Prototype](#prototype-1)
-    - [Refinement](#refinement-1)
+      - [Desktop View](#desktop-view)
+  - [~~Footer~~](#footer)
+    - [~~Prototype~~](#prototype-1)
+      - [~~Add a store for Footer.state.value, with a Redux store, in order to be able to set all components to act according to the current navigation icon selected, and for screen swipes also change the navigatino icons.~~](#add-a-store-for-footerstatevalue-with-a-redux-store-in-order-to-be-able-to-set-all-components-to-act-according-to-the-current-navigation-icon-selected-and-for-screen-swipes-also-change-the-navigatino-icons)
+    - [~~Refinement~~](#refinement)
 - [Views](#views)
   - [View "/"](#view-%22%22)
-    - [Prototype](#prototype-2)
-    - [Refinement](#refinement-2)
+    - [~~Prototype~~](#prototype-2)
+    - [Refinement](#refinement-1)
   - [View "/portfolio"](#view-%22portfolio%22)
-    - [Prototype](#prototype-3)
-    - [Refinement](#refinement-3)
+    - [Prototype](#prototype)
+    - [Refinement](#refinement-2)
   - [View "/contact"](#view-%22contact%22)
-    - [Prototype](#prototype-4)
-    - [Refinement](#refinement-4)
-  - [~~HashRouter~~ Navigation](#hashrouter-navigation)
-    - [Prototype](#prototype-5)
-    - [Refinement](#refinement-5)
-      - [Scrolling methodsMethods](#scrolling-methodsmethods)
-        - [Method 1: -window.scrollTo(x,y)-](#method-1--windowscrolltoxy)
-- [Find Theme With Material Guidance](#find-theme-with-material-guidance)
+    - [~~Prototype~~](#prototype-3)
+    - [Refinement](#refinement-3)
+  - [~~Navigation ( BottomNavigation / Swiping / Scrolling)~~](#navigation--bottomnavigation--swiping--scrolling)
+    - [Credits](#credits)
+    - [~~Prototype~~](#prototype-4)
+    - [~~Refinement~~](#refinement-1)
+      - [~~Scrolling methodsMethods~~](#scrolling-methodsmethods)
+        - [~~Method 1: -window.scrollTo(x,y)~~](#method-1--windowscrolltoxy)
+      - [Unintended Behavior](#unintended-behavior)
 - [Tablet (width>=1024px && width <1366px) breakpoint](#tablet-width1024px--width-1366px-breakpoint)
 - [Desktop breakpoint](#desktop-breakpoint)
-  - [Prototype](#prototype-6)
-  - [Refinement](#refinement-6)
-- [Add a store for Footer.state.value, with a Redux store, in order to be able to set all components to act according to the current navigation icon selected, and for screen swipes also change the navigatino icons.](#add-a-store-for-footerstatevalue-with-a-redux-store-in-order-to-be-able-to-set-all-components-to-act-according-to-the-current-navigation-icon-selected-and-for-screen-swipes-also-change-the-navigatino-icons)
+  - [Prototype](#prototype-1)
+- [Future Improvements](#future-improvements)
 - [Copyright & Trademark](#copyright--trademark)
+
+## ~~Find Layout~~
+
+* [Layout 1][Layout-1]
+* [Layout 2][Layout-2]
+* [Layout 3][Layout-3]
+
+## ~~Find Theme With Material Guidance~~
+
+- ~~[Material Guidance fro color][color]~~
+
+
 
 ## Components
 
 ### Header
 
-#### Prototype
+#### ~~Prototype~~
 
 - ~~take away hamburger menu~~
 
@@ -46,9 +63,13 @@
 
 #### Refinement
 
-### Footer
+##### Desktop View
 
-#### Prototype
+* Make it thinner.
+
+### ~~Footer~~
+
+#### ~~Prototype~~
 
 - ~~Navigation UI in Footer.~~
 
@@ -57,18 +78,45 @@
 - ~~Change icons accordingly.~~
   ~~\* add an GitHub icon/link~~
 
-#### Refinement
+##### ~~Add a store for Footer.state.value, with a Redux store, in order to be able to set all components to act according to the current navigation icon selected, and for screen swipes also change the navigatino icons.~~
+
+- ~~[Create a Redux Store](https://redux.js.org/introduction/getting-started)~~
+- ~~[Connect Footer.js to Redux](https://react-redux.js.org/api/connect)~~
+- ~~Understand [classes in material ui. Why it was passed as props to Footer.js](https://material-ui.com/#augmenting-your-props-using-withstyles)~~
+
+- ~~[Handle actions>dispatch>reducer>scrolling to the right view](https://redux.js.org/basics/actions)~~
+
+  - ~~Should I use [mapDispatchToProps](https://react-redux.js.org/api/connect#mapdispatchtoprops-object-dispatch-ownprops-object). I read that all data from store should be dispatched by actions (flux)~~
+  - ~~Selected Footer tab should be determined by Redux's store~~
+
+  - ###### **Objective:** Make sure both happen:
+
+    - Clicking an BottomNavigationIcon scrolls to the top of the respective view
+    - Scrolling/Swiping to a view will change BottomNavigation selected tab correspondingly
+      - The Projects tab will be selected if window.screen doesn't exactly match the `window.screen` of the views of either the `Hero` or `Contact` components
+
+  - ###### **Implementation:** So, basically, you'll be able to **either**:
+    - ~~click button **-\>** changes `selectValue`'s redux state (`viewSelect` action) **-\>** goes to view (action that goes to the view onClick. **So**, add logic that moves to view into the `viewSelect` action).~~
+    - ~~**TASK: create action/reducer**~~
+    - Going to a view by scrolling/swiping **-\>** also changes `selectValue`'s redux state, which **-\>** changes `BottomNavigation`'s value.
+      - Try [this](https://www.kempsterrrr.xyz/handling-scroll-events-in-react/) on desktop view, to see if App.onScroll works. using window.addEventListener('scroll') or setIntervall() makes slideshow and the whole app laggy.
+      - **Use [`window.pageYOffset`](https://developer.mozilla.org/en-US/docs/Web/API/Window/pageYOffset) (or [`window.scrollY`](https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY)), for [comparison](https://stackoverflow.com/questions/22675126/what-is-offsetheight-clientheight-scrollheight).**
+        - Maybe go to `/contact` after checking if pageYOffset >= (`method for whole app height` - `window.screen.availHeight`)
+        - Selected button matches view. Default selected button is `Projects`, if view not `top` or `contact` (**or default is `top`. If `!top` && `!contact`, is `project`**)
+        - **TASK: create action/reducer**
+
+#### ~~Refinement~~
 
 - ~~Change unselected navigation icons color to white, matching those on the AppBar~~
 
-- Pressing on the buttons should change view
+- ~~Pressing on the buttons should change view~~
   - ~~Replace the contact icon for one that doesn't give the idea of multiple contacts.~~
 
 ## Views
 
 ### View "/"
 
-#### Prototype
+#### ~~Prototype~~
 
 - ~~Choose start view's "/" image~~
 
@@ -76,8 +124,9 @@
 
 - ~~Only in this View, Switch Header and Footer component's background to '#00000090', else, back to '#2d5f72'~~
 
-- [AppBar should be translucid only in this view. If possible, transition should be smooth, between views](https://developer.mozilla.org/en-US/docs/Web/API/Window/scroll)
-- Choose Typography for Logo, and if it is gonna be only text or if there's gonna be a image for my brand.
+- ~~Choose Typography for Logo, and if it is gonna be only text or if there's gonna be a image for my brand.~~
+- Change hero image, because the first one was in russian, and displays the hardware's logo, which could bring problems.
+- Maybe add a redux store `Desktop | Mobile`, that, switches text between `Scroll | Swipe`
 
 ### View "/portfolio"
 
@@ -87,11 +136,11 @@
 
 - Choose which projects to display
 - take screenshots of apps and replace images in the slideshow
-- Change each slideshow's texto to trief description of it's app.
+- Change each slideshow's texto to the name and description of it's app.
 
 ### View "/contact"
 
-#### Prototype
+#### ~~Prototype~~
 
 - ~~Draw Contact/Footer component.~~
 
@@ -105,24 +154,26 @@
 - Implement functionality, so the form will send messages to my professional email.
   - See if it can be done with a 3rd party package or service.
 
-### ~~HashRouter~~ Navigation
+### ~~Navigation ( BottomNavigation / Swiping / Scrolling)~~
+
+#### Credits
+
+[Handling scroll events in React - @kempsterrrr](https://www.kempsterrrr.xyz/handling-scroll-events-in-react/)
 
 Navigate between component's views upon user input.
 
-#### Prototype
+#### ~~Prototype~~
 
-- HashRouter not working as intended. It only uses a `#` in the address bar. Edit: Managed to get it working with [this tip, from Seth Kroger](https://teamtreehouse.com/community/reactrouter-hashrouter-does-not-work-with-2-routes)
-- Instead, add `id`s in the components, for navigation.
-- Create `<Link>`s on the Footer component, for navigating to the respective views
+- ~~HashRouter not working as intended. It only uses a `#` in the address bar. Edit: Managed to get it working with [this tip, from Seth Kroger](https://teamtreehouse.com/community/reactrouter-hashrouter-does-not-work-with-2-routes)~~
+- ~~Instead, add `id`s in the components, for navigation.~~
+- ~~Create `<Link>`s on the Footer component, for navigating to the respective views~~
 
-#### Refinement
+#### ~~Refinement~~
 
-- Use [react-transition-group](https://github.com/reactjs/react-transition-group) to animate a smooth sliding motion for navigating between components. Use it in the <aside> too, on desktop view.
-- [A shallow dive into React Router v4 Animated Transitions](https://github.com/reactjs/react-transition-group)
+##### ~~Scrolling methodsMethods~~
 
-##### Scrolling methodsMethods
 
-###### Method 1: -window.scrollTo(x,y)-
+###### ~~Method 1: -window.scrollTo(x,y)~~
 
 ```
 /* pq cada componente tem 100vh, e portfolio é o segundo componente. O primeiro  não muda /*
@@ -134,47 +185,29 @@ window.scrollTo(0, (window.screen.availHeight) )
 window.scrollTo(0, (window.screen.availHeight*10) )
 ```
 
-## Find Theme With Material Guidance
+##### Unintended Behavior
 
-- [Material Guidance fro color][color]
+* If swipe is long, it may hit Top or Bottom view without activating the action for selecting the respective view in the BottomNavigation bar. May be solved by adding a check at `scrollY === 0` and `scrolly >= window.scrollHeight - window.screen.availHeight -1`. Add a setTimeout for 1000ms, so it won't call too many times.
+* onScroll not activating on desktop, neither by interacting with the scroll bar, nor with the keyboard inputs (`down`, `pgDown`, `home`, etc.)
 
 ## Tablet (width>=1024px && width <1366px) breakpoint
 
+* social icons are too far apart.
+
 ## Desktop breakpoint
+* Decide design. Between:
+  * Using css breakpoints and material ui theme breakpoints
+  * Creating a **redux store for switching between Desktop and Mobile** (or also between tablet and phone) view, when `App` Component `onResize` is triggered, to displaying, hiding or modifying accordingly things that show on the screen.
+* Hide bottom navigation and switch it's functionality to a left aside or top the center of the Top App Bar, without icons.
 
 ### Prototype
 
 - Unmount componet `Footer / NavigationBottom` and replace it by mounting a left `<aside>`, or material ui equivalent component.
 - Do some styling to diferentiate the current view, so it won't be boring and so it is good looking.
 
-### Refinement
+## Future Improvements
 
-## Add a store for Footer.state.value, with a Redux store, in order to be able to set all components to act according to the current navigation icon selected, and for screen swipes also change the navigatino icons.
 
-- ~~[Create a Redux Store](https://redux.js.org/introduction/getting-started)~~
-- ~~[Connect Footer.js to Redux](https://react-redux.js.org/api/connect)~~
-- ~~Understand [classes in material ui. Why it was passed as props to Footer.js](https://material-ui.com/#augmenting-your-props-using-withstyles)~~
-
-- [Handle actions>dispatch>reducer>scrolling to the right view](https://redux.js.org/basics/actions)
-
-  - ~~Should I use [mapDispatchToProps](https://react-redux.js.org/api/connect#mapdispatchtoprops-object-dispatch-ownprops-object). I read that all data from store should be dispatched by actions (flux)~~
-  - ~~Selected Footer tab should be determined by Redux's store~~
-
-  - ### **Objective:** Make sure both happen:
-
-    - Clicking an BottomNavigationIcon scrolls to the top of the respective view
-    - Scrolling/Swiping to a view will change BottomNavigation selected tab correspondingly
-      - The Projects tab will be selected if window.screen doesn't exactly match the `window.screen` of the views of either the `Hero` or `Contact` components
-
-  - ### **Implementation:** So, basically, you'll be able to **either**:
-    - ~~click button **-\>** changes `selectValue`'s redux state (`viewSelect` action) **-\>** goes to view (action that goes to the view onClick. **So**, add logic that moves to view into the `viewSelect` action).~~
-    - ~~**TASK: create action/reducer**~~
-    - Going to a view by scrolling/swiping **-\>** also changes `selectValue`'s redux state, which **-\>** changes `BottomNavigation`'s value.
-      - Try [this](https://www.kempsterrrr.xyz/handling-scroll-events-in-react/) on desktop view, to see if App.onScroll works. using window.addEventListener('scroll') or setIntervall() makes slideshow and the whole app laggy.
-      - **Use [`window.pageYOffset`](https://developer.mozilla.org/en-US/docs/Web/API/Window/pageYOffset) (or [`window.scrollY`](https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY)), for [comparison](https://stackoverflow.com/questions/22675126/what-is-offsetheight-clientheight-scrollheight).**
-        - Maybe go to `/contact` after checking if pageYOffset >= (`method for whole app height` - `window.screen.availHeight`)
-        - Selected button matches view. Default selected button is `Projects`, if view not `top` or `contact` (**or default is `top`. If `!top` && `!contact`, is `project`**)
-        - **TASK: create action/reducer**
 
 - [Use Refs for DOM](https://codesandbox.io/s/v6948pww5y?from-embed)
 - [Use react hooks with redux, to have global state with functional components](https://medium.freecodecamp.org/how-to-integrate-react-hooks-into-your-project-without-changing-your-redux-code-974e6f70f0b0?source=bookmarks---------0---------------------)
