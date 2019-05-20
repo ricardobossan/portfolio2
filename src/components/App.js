@@ -29,10 +29,12 @@ function App(props) {
     const action =
       window.scrollY >= 0 &&
       window.scrollY <
-        window.screen.availHeight - window.screen.availHeight * 0.2
+        window.screen.availHeight - window.screen.availHeight * 0.7
         ? swipeTop
         : window.scrollY >=
-          document.body.clientHeight - window.screen.availHeight - 1
+          document.body.clientHeight -
+            window.screen.availHeight -
+            window.screen.availHeight * 0.7
         ? swipeContact
         : swipeProjects;
 
