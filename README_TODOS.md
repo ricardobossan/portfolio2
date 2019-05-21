@@ -1,6 +1,6 @@
 # TODOS <!-- omit in toc -->
 
-**Current _@todo_**: [Tablet (width>=1024px && width <1366px) breakpoint](#tablet-width1024px--width-1366px-breakpoint)
+**Current _@todo_**:
 
  <!-- omit in toc -->
 
@@ -8,29 +8,29 @@
 
 - [~~Find Layout~~](#find-layout)
 - [~~Find Theme With Material Guidance~~](#find-theme-with-material-guidance)
-- [Components](#components)
-  - [Header](#header)
+- [~~Components~~](#components)
+  - [~~Header~~](#header)
     - [~~Prototype~~](#prototype)
-    - [Refinement](#refinement)
-      - [Desktop View](#desktop-view)
+    - [~~Refinement~~](#refinement)
+      - [~~Desktop View~~](#desktop-view)
   - [~~Footer~~](#footer)
     - [~~Prototype~~](#prototype-1)
       - [~~Add a store for Footer.state.value, with a Redux store, in order to be able to set all components to act according to the current navigation icon selected, and for screen swipes also change the navigatino icons.~~](#add-a-store-for-footerstatevalue-with-a-redux-store-in-order-to-be-able-to-set-all-components-to-act-according-to-the-current-navigation-icon-selected-and-for-screen-swipes-also-change-the-navigatino-icons)
-    - [~~Refinement~~](#refinement)
+    - [~~Refinement~~](#refinement-1)
 - [Views](#views)
   - [View "/"](#view-%22%22)
     - [~~Prototype~~](#prototype-2)
-    - [Refinement](#refinement-1)
+    - [Refinement](#refinement)
   - [View "/portfolio"](#view-%22portfolio%22)
     - [Prototype](#prototype)
-    - [Refinement](#refinement-2)
+    - [Refinement](#refinement-1)
   - [View "/contact"](#view-%22contact%22)
     - [~~Prototype~~](#prototype-3)
-    - [Refinement](#refinement-3)
+    - [Refinement](#refinement-2)
   - [~~Navigation ( BottomNavigation / Swiping / Scrolling)~~](#navigation--bottomnavigation--swiping--scrolling)
     - [Credits](#credits)
     - [~~Prototype~~](#prototype-4)
-    - [~~Refinement~~](#refinement-1)
+    - [~~Refinement~~](#refinement-2)
       - [~~Scrolling methodsMethods~~](#scrolling-methodsmethods)
         - [~~Method 1: -window.scrollTo(x,y)~~](#method-1--windowscrolltoxy)
       - [Unintended Behavior](#unintended-behavior)
@@ -50,9 +50,9 @@
 
 - ~~[Material Guidance fro color][color]~~
 
-## Components
+## ~~Components~~
 
-### Header
+### ~~Header~~
 
 #### ~~Prototype~~
 
@@ -60,11 +60,11 @@
 
 - ~~make AppBar match the theme's color~~
 
-#### Refinement
+#### ~~Refinement~~
 
-##### Desktop View
+##### ~~Desktop View~~
 
-- Make it thinner.
+- ~~Make it thinner.~~
 
 ### ~~Footer~~
 
@@ -97,12 +97,12 @@
   - ###### **Implementation:** So, basically, you'll be able to **either**:
     - ~~click button **-\>** changes `selectValue`'s redux state (`viewSelect` action) **-\>** goes to view (action that goes to the view onClick. **So**, add logic that moves to view into the `viewSelect` action).~~
     - ~~**TASK: create action/reducer**~~
-    - Going to a view by scrolling/swiping **-\>** also changes `selectValue`'s redux state, which **-\>** changes `BottomNavigation`'s value.
-      - Try [this](https://www.kempsterrrr.xyz/handling-scroll-events-in-react/) on desktop view, to see if App.onScroll works. using window.addEventListener('scroll') or setIntervall() makes slideshow and the whole app laggy.
-      - **Use [`window.pageYOffset`](https://developer.mozilla.org/en-US/docs/Web/API/Window/pageYOffset) (or [`window.scrollY`](https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY)), for [comparison](https://stackoverflow.com/questions/22675126/what-is-offsetheight-clientheight-scrollheight).**
-        - Maybe go to `/contact` after checking if pageYOffset >= (`method for whole app height` - `window.screen.availHeight`)
-        - Selected button matches view. Default selected button is `Projects`, if view not `top` or `contact` (**or default is `top`. If `!top` && `!contact`, is `project`**)
-        - **TASK: create action/reducer**
+    - ~~Going to a view by scrolling/swiping **-\>** also changes `selectValue`'s redux state, which **-\>** changes `BottomNavigation`'s value.~~
+      - ~~Try [this](https://www.kempsterrrr.xyz/handling-scroll-events-in-react/) on desktop view, to see if App.onScroll works. using window.addEventListener('scroll') or setIntervall() makes slideshow and the whole app laggy.~~
+      - ~~**Use [`window.pageYOffset`](https://developer.mozilla.org/en-US/docs/Web/API/Window/pageYOffset) (or [`window.scrollY`](https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY)), for [comparison](https://stackoverflow.com/questions/22675126/what-is-offsetheight-clientheight-scrollheight).**~~
+        - M~~aybe go to `/contact` after checking if pageYOffset >= (`method for whole app height` - `window.screen.availHeight`)~~
+        - ~~Selected button matches view. Default selected button is `Projects`, if view not `top` or `contact` (**or default is `top`. If `!top` && `!contact`, is `project`**)~~
+        - ~~**TASK: create action/reducer**~~
 
 #### ~~Refinement~~
 
@@ -204,7 +204,9 @@ window.scrollTo(0, (window.screen.availHeight*10) )
 
 ### Prototype
 
-- Unmount componet `Footer / NavigationBottom` and replace it by mounting a left `<aside>`, or material ui equivalent component.
+- ~~Hide componet `Footer / NavigationBottom`.~~
+- And replace it by mounting a left `<aside>`, or material ui equivalent component.
+  - `<aside>`should have the same functionality as the Footer
 - Do some styling to diferentiate the current view, so it won't be boring and so it is good looking.
 
 ## Future Improvements

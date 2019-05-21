@@ -6,6 +6,7 @@ import Portfolio from '../Portfolio';
 
 const styles = theme => ({
   root: {
+    minHeight: '100vh',
     background: '#2d5f72',
     textAlign: 'center',
     paddingTop: '0px'

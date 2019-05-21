@@ -11,8 +11,8 @@ import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
   root: {
-    height: '100vh',
-    position: 'static'
+    height: '100%',
+    position: 'relative'
   },
   img: {
     opacity: '0.9',

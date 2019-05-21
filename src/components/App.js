@@ -1,18 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Grid from '@material-ui/core/Grid';
 /* import { HashRouter as Router, Route, Switch } from 'react-router-dom';
  */
 import '../styles/styles.css';
 
 import theme from './themes/theme';
 
-import { Header, Hero, Footer, MyProjects } from './layout/';
+import { Header, AsideNav, Hero, Footer, MyProjects } from './layout/';
 import Contact from './Contact';
 
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 import { swipeTop, swipeProjects, swipeContact } from '../actions';
+
+import Hidden from '@material-ui/core/Hidden';
 
 /** @theme palette https://material.io/tools/color/#!/?view.left=1&view.right=0&primary.color=2d5e72&secondary.color=0d3645 */
 const mainTheme = createMuiTheme(theme);
@@ -73,10 +76,41 @@ function App(props) {
         <React.Fragment>
           <CssBaseline />
           <Header />
-          <Hero />
-          <MyProjects />
-          <Contact />
-          {/*         <Router hashType="noslash">
+          <div style={{ display: 'flex', flexDirection: 'row' }}>
+            <Hidden mdDown>
+              <Grid
+                style={{
+                  height: '100vh'
+                }}
+                lg={2}
+              >
+                <AsideNav />
+                {/*                 
+                <aside style={{ height: '100vh' }}>
+                  <ul
+                    style={{
+                      height: '100%',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'center'
+                    }}
+                  >
+                    <li>Top</li>
+                    <li>Projects</li>
+                    <li>Contact</li>
+                  </ul>
+                </aside>
+ */}{' '}
+              </Grid>
+            </Hidden>
+            <Grid lg={10}>
+              <div>
+                <Hero />
+                <MyProjects />
+                <Contact />
+              </div>
+            </Grid>
+            {/*         <Router hashType="noslash">
             <Route>
               <Route exact path="/" component={Hero} />
               <Route path="/portfolio" component={MyProjects} />
@@ -84,6 +118,7 @@ function App(props) {
             </Route>
           </Router>
   */}{' '}
+          </div>
           <Footer />
         </React.Fragment>
       </MuiThemeProvider>
