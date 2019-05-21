@@ -1,6 +1,7 @@
 # TODOS <!-- omit in toc -->
 
 **Current _@todo_**: [Tablet (width>=1024px && width <1366px) breakpoint](#tablet-width1024px--width-1366px-breakpoint)
+
  <!-- omit in toc -->
 
 ## Index <!-- omit in toc -->
@@ -41,15 +42,13 @@
 
 ## ~~Find Layout~~
 
-* [Layout 1][Layout-1]
-* [Layout 2][Layout-2]
-* [Layout 3][Layout-3]
+- [Layout 1][layout-1]
+- [Layout 2][layout-2]
+- [Layout 3][layout-3]
 
 ## ~~Find Theme With Material Guidance~~
 
 - ~~[Material Guidance fro color][color]~~
-
-
 
 ## Components
 
@@ -65,7 +64,7 @@
 
 ##### Desktop View
 
-* Make it thinner.
+- Make it thinner.
 
 ### ~~Footer~~
 
@@ -172,7 +171,6 @@ Navigate between component's views upon user input.
 
 ##### ~~Scrolling methodsMethods~~
 
-
 ###### ~~Method 1: -window.scrollTo(x,y)~~
 
 ```
@@ -187,18 +185,22 @@ window.scrollTo(0, (window.screen.availHeight*10) )
 
 ##### Unintended Behavior
 
-* If swipe is long, it may hit Top or Bottom view without activating the action for selecting the respective view in the BottomNavigation bar. May be solved by adding a check at `scrollY === 0` and `scrolly >= window.scrollHeight - window.screen.availHeight -1`. Add a setTimeout for 1000ms, so it won't call too many times.
-* onScroll not activating on desktop, neither by interacting with the scroll bar, nor with the keyboard inputs (`down`, `pgDown`, `home`, etc.)
+- If swipe is long, it may hit Top or Bottom view without activating the action for selecting the respective view in the BottomNavigation bar. May be solved by adding a check at `scrollY === 0` and `scrolly >= window.scrollHeight - window.screen.availHeight -1`. Add a setTimeout for 1000ms, so it won't call too many times.
+- onScroll not activating on desktop, neither by interacting with the scroll bar, nor with the keyboard inputs (`down`, `pgDown`, `home`, etc.)
 
 ## Tablet (width>=1024px && width <1366px) breakpoint
 
-* social icons are too far apart.
+- social should be closer to each other.
+- ~~Slideshows should wrap~~.
 
 ## Desktop breakpoint
-* Decide design. Between:
-  * Using css breakpoints and material ui theme breakpoints
-  * Creating a **redux store for switching between Desktop and Mobile** (or also between tablet and phone) view, when `App` Component `onResize` is triggered, to displaying, hiding or modifying accordingly things that show on the screen.
-* Hide bottom navigation and switch it's functionality to a left aside or top the center of the Top App Bar, without icons.
+
+- ~~Decide design. Between:~~
+  - ~~Using css breakpoints and material ui theme breakpoints~~
+  - ~~Creating a **redux store for switching between Desktop and Mobile** (or also between tablet and phone) view, when `App` Component `onResize` is triggered, to displaying, hiding or modifying accordingly things that show on the screen.~~
+  - ~~:point_right: Both approaches (CSS Breakpoints in material UI && redux state for phone, tablet and desktop, for eventual features):point_left:~~
+- ~~Hide bottom navigation~~
+  - Switch it's functionality to a left aside or top the center of the Top App Bar, without icons.
 
 ### Prototype
 
@@ -206,8 +208,6 @@ window.scrollTo(0, (window.screen.availHeight*10) )
 - Do some styling to diferentiate the current view, so it won't be boring and so it is good looking.
 
 ## Future Improvements
-
-
 
 - [Use Refs for DOM](https://codesandbox.io/s/v6948pww5y?from-embed)
 - [Use react hooks with redux, to have global state with functional components](https://medium.freecodecamp.org/how-to-integrate-react-hooks-into-your-project-without-changing-your-redux-code-974e6f70f0b0?source=bookmarks---------0---------------------)

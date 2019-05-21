@@ -5,6 +5,7 @@ import MobileStepper from '@material-ui/core/MobileStepper';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
@@ -42,7 +43,7 @@ const tutorialSteps = [
 
 const styles = theme => ({
   root: {
-    maxWidth: 400,
+    margin: 'auto',
     flexGrow: 1,
     borderBottom: '1px solid rgba(0,0,0,0.14)'
   },
@@ -56,7 +57,6 @@ const styles = theme => ({
   img: {
     height: 255,
     display: 'block',
-    maxWidth: 400,
     overflow: 'hidden',
     width: '100%'
   },
@@ -92,7 +92,7 @@ class SwipeableTextMobileStepper extends React.Component {
     const maxSteps = tutorialSteps.length;
 
     return (
-      <div className={classes.root}>
+      <Grid className={classes.root} xs={12}>
         <Paper square elevation={0} className={classes.header}>
           <Typography>{tutorialSteps[activeStep].label}</Typography>
         </Paper>
@@ -148,7 +148,7 @@ class SwipeableTextMobileStepper extends React.Component {
             </Button>
           }
         />
-      </div>
+      </Grid>
     );
   }
 }
