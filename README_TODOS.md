@@ -190,7 +190,7 @@ window.scrollTo(0, (window.screen.availHeight*10) )
 
 ## Tablet (width>=1024px && width <1366px) breakpoint
 
-- social should be closer to each other.
+- ~~social should be closer to each other~~.
 - ~~Slideshows should wrap~~.
 
 ## Desktop breakpoint

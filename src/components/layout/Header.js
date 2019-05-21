@@ -17,6 +17,9 @@ const styles = theme => ({
   grow: {
     flexGrow: 1
   },
+  iconContainer: {
+    justifyContent: 'flex-end'
+  },
   iconButton: {
     margin: 0
   },
@@ -45,8 +48,8 @@ function ButtonAppBar(props) {
               RB
             </Typography>
           </Grid>
-          <Grid container direction="row">
-            <Grid xs={3} item>
+          <Grid className={classes.iconContainer} container direction="row">
+            <Grid xs={3} md={2} item>
               <IconButton
                 className={classes.iconButton}
                 aria-label="Linkedin"
@@ -55,7 +58,7 @@ function ButtonAppBar(props) {
                 <i className="fab fa-linkedin-in" />
               </IconButton>
             </Grid>
-            <Grid xs={3} item>
+            <Grid xs={3} md={2} item>
               <IconButton
                 className={classes.iconButton}
                 aria-label="GitHub"
@@ -64,7 +67,7 @@ function ButtonAppBar(props) {
                 <i className="fab fa-github" />
               </IconButton>
             </Grid>
-            <Grid xs={3} item>
+            <Grid xs={3} md={2} item>
               <IconButton
                 className={classes.iconButton}
                 aria-label="Twitter"
@@ -73,7 +76,7 @@ function ButtonAppBar(props) {
                 <i className="fab fa-twitter" />
               </IconButton>
             </Grid>
-            <Grid xs={3} item>
+            <Grid xs={3} md={2} item>
               <IconButton
                 className={classes.iconButton}
                 aria-label="Mail"
