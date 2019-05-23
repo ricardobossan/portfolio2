@@ -32,29 +32,66 @@ const styles = theme => ({
     display: 'flex',
     paddingTop: theme.spacing.unit,
     paddingBottom: theme.spacing.unit
+  },
+  sendButton: {
+    margin: 10,
+    backgroundColor: theme.palette.primary.main
   }
 });
 
 class Contact extends React.Component {
-  state = {
+  /*   constructor(props) {
+    super(props);
+    this.nameInput = React.createRef();
+    this.emailInput = React.createRef();
+    this.messageInput = React.createRef();
+  }
+ */ state = {
     name: 'Cat in the Hat',
     age: '',
-    multiline: 'Controlled'
+    multiline: 'Controlled',
+    Name: '',
+    Email: '',
+    Message: ''
   };
 
-  handleChange = name => event => {
-    this.setState({ [name]: event.target.value });
+  /*   inputChange = (e) => this.setState({e.target.name})
+   */
+  submitForm = () => {
+    this.setState({ Name: '', Email: '', Message: '' });
+    /*     this.nameInput.current.state = '';
+    this.emailInput.current.state = '';
+    this.messageInput.current.state = '';
+
+ */
+  };
+
+  handleChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
+    console.log(this.state);
   };
 
   render() {
     const { classes } = this.props;
+    const { Name, Email, Message } = this.state;
     return (
       <div className={classes.root}>
         <Typography className={classes.contactMe} variant="h3">
           Contact Me
         </Typography>
-        <form className={classes.container} autoComplete="off">
+        <form
+          onSubmit={this.submitForm}
+          className={classes.container}
+          action="mailto:mail@ricardobossan.com"
+          method="post"
+          enctype="text/plain"
+          autoComplete="off"
+        >
           <TextField
+            onChange={this.handleChange}
+            value={Name}
+            name="Name"
+            required
             id="name"
             placeholder="Name"
             fullWidth
@@ -63,6 +100,10 @@ class Contact extends React.Component {
           />
 
           <TextField
+            onChange={this.handleChange}
+            value={Email}
+            name="Email"
+            required
             id="standard-uncontrolled"
             placeholder="Email"
             fullWidth
@@ -71,6 +112,10 @@ class Contact extends React.Component {
           />
 
           <TextField
+            onChange={this.handleChange}
+            value={Message}
+            name="Message"
+            required
             id="message"
             placeholder="Type your message here..."
             fullWidth
@@ -78,6 +123,16 @@ class Contact extends React.Component {
             className={classes.textField}
             margin="normal"
           />
+          <Button
+            type="submit"
+            className={classes.sendButton}
+            variant="outlined"
+            elevation={1}
+          >
+            <Typography color="#FFF" variant="h6">
+              Send
+            </Typography>
+          </Button>
         </form>
         <div style={{ marginTop: '50px' }}>
           <Button className={classes.Button} elevation={1}>

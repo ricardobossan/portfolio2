@@ -11,27 +11,28 @@
   - [~~Footer~~](#footer)
     - [~~Prototype~~](#prototype-1)
       - [~~Add a store for Footer.state.value, with a Redux store, in order to be able to set all components to act according to the current navigation icon selected, and for screen swipes also change the navigatino icons.~~](#add-a-store-for-footerstatevalue-with-a-redux-store-in-order-to-be-able-to-set-all-components-to-act-according-to-the-current-navigation-icon-selected-and-for-screen-swipes-also-change-the-navigatino-icons)
-    - [Refinement](#refinement)
+    - [~~Refinement~~](#refinement)
 - [Views](#views)
   - [View "/"](#view-%22%22)
     - [~~Prototype~~](#prototype-2)
-    - [Refinement 👈](#refinement-%F0%9F%91%88)
+    - [Refinement](#refinement)
   - [View "/portfolio"](#view-%22portfolio%22)
-    - [Refinement](#refinement-1)
-  - [View "/contact"](#view-%22contact%22)
+    - [Refinement 👈](#refinement-%F0%9F%91%88)
+  - [~~View "/contact"~~](#view-%22contact%22)
     - [~~Prototype~~](#prototype-3)
-    - [Refinement](#refinement-2)
+    - [~~Refinement~~](#refinement-1)
+      - [~~Implement functionality, so the form will send messages to my professional email.~~](#implement-functionality-so-the-form-will-send-messages-to-my-professional-email)
   - [~~Navigation ( BottomNavigation / Swiping / Scrolling)~~](#navigation--bottomnavigation--swiping--scrolling)
     - [Credits](#credits)
     - [~~Prototype~~](#prototype-4)
-    - [~~Refinement~~](#refinement)
+    - [~~Refinement~~](#refinement-2)
       - [~~Scrolling methodsMethods~~](#scrolling-methodsmethods)
         - [~~Method 1: -window.scrollTo(x,y)~~](#method-1--windowscrolltoxy)
       - [Unintended Behavior](#unintended-behavior)
-- [Tablet (width>=1024px && width <1366px) breakpoint](#tablet-width1024px--width-1366px-breakpoint)
+- [~~Tablet (width>=1024px && width <1366px) breakpoint~~](#tablet-width1024px--width-1366px-breakpoint)
 - [~~Desktop breakpoint~~](#desktop-breakpoint)
   - [~~Prototype~~](#prototype-5)
-  - [~~Refinement~~](#refinement-1)
+  - [~~Refinement~~](#refinement-3)
 - [General Refinement](#general-refinement)
   - [Mobile View Screen Sometimes Horizontaly Seems Swiped a Single Px Out of Bounds](#mobile-view-screen-sometimes-horizontaly-seems-swiped-a-single-px-out-of-bounds)
 - [Finalize](#finalize)
@@ -102,7 +103,7 @@
         - ~~Selected button matches view. Default selected button is `Projects`, if view not `top` or `contact` (**or default is `top`. If `!top` && `!contact`, is `project`**)~~
         - ~~**TASK: create action/reducer**~~
 
-#### Refinement
+#### ~~Refinement~~
 
 - ~~Change unselected navigation icons color to white, matching those on the AppBar~~
 
@@ -117,7 +118,7 @@
 
 - ~~Choose start view's "/" image~~
 
-#### Refinement 👈
+#### Refinement
 
 - ~~Only in this View, Switch Header and Footer component's background to '#00000090', else, back to '#2d5f72'~~
 
@@ -129,13 +130,13 @@
 
 ### View "/portfolio"
 
-#### Refinement
+#### Refinement 👈
 
 - Choose which projects to display
 - take screenshots of apps and replace images in the slideshow
 - Change each slideshow's texto to the name and description of it's app.
 
-### View "/contact"
+### ~~View "/contact"~~
 
 #### ~~Prototype~~
 
@@ -146,10 +147,39 @@
 - ~~Contact view should take 100% of view height~~
 - ~~Links for Linkedin and Twitter? If there is, write it's names, icons are optional here.~~
 
-#### Refinement
+#### ~~Refinement~~
 
-- Implement functionality, so the form will send messages to my professional email.
-  - See if it can be done with a 3rd party package or service.
+##### ~~Implement functionality, so the form will send messages to my professional email.~~
+
+- ~~See if it can be done with a 3rd party package or service.~~
+- ~~Reset fields after send.~~
+- ~~Methods:~~
+
+  - **Method #1**: [Open OS Email Client, Filled By Form Input][emailclient]
+
+    ```
+    <!DOCTYPE html>
+    <html>
+    <body>
+
+    <h2>Send e-mail to mail@ricardobossan.com:</h2>
+
+    <form action="mailto:mail@ricardobossan.com" method="post" enctype="text/plain">
+    Name:<br>
+    <input type="text" name="name"><br>
+    E-mail:<br>
+    <input type="text" name="mail"><br>
+    Comment:<br>
+    <input type="text" name="comment" size="50"><br><br>
+    <input type="submit" value="Send">
+    <input type="reset" value="Reset">
+    </form>
+
+    </body>
+    </html>
+    ```
+
+- **Method #2**: [Actions][mailaction]
 
 ### ~~Navigation ( BottomNavigation / Swiping / Scrolling)~~
 
@@ -185,7 +215,7 @@ window.scrollTo(0, (window.screen.availHeight*10) )
 
 - If swipe is long, it may hit Top or Bottom view without activating the action for selecting the respective view in the BottomNavigation bar. May be solved by adding a check at `scrollY === 0` and `scrolly >= window.scrollHeight - window.screen.availHeight -1`. Add a setTimeout for 1000ms, so it won't call too many times.
 
-## Tablet (width>=1024px && width <1366px) breakpoint
+## ~~Tablet (width>=1024px && width <1366px) breakpoint~~
 
 - ~~social should be closer to each other~~.
 - ~~Slideshows should wrap~~.
@@ -233,6 +263,7 @@ window.scrollTo(0, (window.screen.availHeight*10) )
 
 ## Future Improvements
 
+- Form validation for email TextField.
 - [Use Refs for DOM](https://codesandbox.io/s/v6948pww5y?from-embed)
 - [Use react hooks with redux, to have global state with functional components](https://medium.freecodecamp.org/how-to-integrate-react-hooks-into-your-project-without-changing-your-redux-code-974e6f70f0b0?source=bookmarks---------0---------------------)
 
@@ -262,3 +293,7 @@ const theme = createMuiTheme({
 [muithemes]: https://material-ui.com/customization/themes/
 [muithemetutorial]: https://www.turbohide.com/index.php?q=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DyRM-beLeUT8%26list%3DPLcCp4mjO-z98WAu4sd0eVha1g-NMfzHZk%26index%3D13
 [menuitem]: https://material-ui.com/demos/menus/
+[emailclient]: https://www.w3schools.com/html/tryit.asp?filename=tryhtml_form_mail
+[react-mail-form]: https://www.npmjs.com/package/react-mail-form
+[mailaction]: https://medium.com/@sgobinda007/send-mail-from-your-reactjs-app-c6561bd5c22f
+[refs]: https://reactjs.org/docs/refs-and-the-dom.html
