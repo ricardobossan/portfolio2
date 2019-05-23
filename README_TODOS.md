@@ -200,13 +200,27 @@ window.scrollTo(0, (window.screen.availHeight*10) )
   - ~~Creating a **redux store for switching between Desktop and Mobile** (or also between tablet and phone) view, when `App` Component `onResize` is triggered, to displaying, hiding or modifying accordingly things that show on the screen.~~
   - ~~:point_right: Both approaches (CSS Breakpoints in material UI && redux state for phone, tablet and desktop, for eventual features):point_left:~~
 - ~~Hide bottom navigation~~
-  - Switch it's functionality to a left aside or top the center of the Top App Bar, without icons.
+  - ~~Switch it's functionality to a :point_right: left aside or top the center of the Top App Bar, without icons.~~
 
 ### Prototype
 
 - ~~Hide componet `Footer / NavigationBottom`.~~
-- And replace it by mounting a left `<aside>`, or material ui equivalent component.
-  - `<aside>`should have the same functionality as the Footer
+- ~~And replace it by mounting a left `<aside>`, or material ui equivalent component.~~
+  - Use [secondary, in themes][muithemes], for styling selected tab in `<aside>`
+    - Use this JSS in the class, and make it be the iten's style when the redux state matches that item (found in [Mui docs for MenuItem][menuitem]):
+
+```
+  '&:focus': {
+      backgroundColor: theme.palette.primary.main,
+      '& $primary, & $icon': {
+        color: theme.palette.common.white,
+      },
+    },
+```
+
+    - Check [tutorial][muithemetutorial]
+
+- `<aside>` should have the same functionality as the Footer
 - Do some styling to diferentiate the current view, so it won't be boring and so it is good looking.
 
 ## Future Improvements
@@ -231,7 +245,12 @@ const theme = createMuiTheme({
 
 ## Copyright & Trademark
 
+<!-- Reference -->
+
 [layout-1]: http://riccardozanutta.com/
 [layout-2]: https://www.lewishazen.com/
 [layout-3]: http://jeffwang.co/
 [color]: https://material.io/design/color/
+[muithemes]: https://material-ui.com/customization/themes/
+[muithemetutorial]: https://www.turbohide.com/index.php?q=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DyRM-beLeUT8%26list%3DPLcCp4mjO-z98WAu4sd0eVha1g-NMfzHZk%26index%3D13
+[menuitem]: https://material-ui.com/demos/menus/

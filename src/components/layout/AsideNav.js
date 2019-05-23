@@ -16,6 +16,12 @@ const styles = theme => ({
     backgroundColor: theme.palette.background.paper
   },
   asideItem: {
+    '&:focus': {
+      backgroundColor: theme.palette.primary.main,
+      '& $primary, & $icon': {
+        color: theme.palette.common.white
+      }
+    },
     width: '100%',
     display: 'flex',
     justifyContent: 'center'
@@ -29,14 +35,16 @@ const styles = theme => ({
 class NestedList extends React.Component {
   render() {
     const { classes } = this.props;
-
+    console.log(classes);
     return (
       <div>
         <List component="nav" className={classes.root}>
           <ListItem className={classes.asideItem} button>
             <ListItemText
               onClick={this.handleClick}
-              classes={{ primary: classes.asideItemText }}
+              classes={{
+                primary: classes.asideItemText
+              }}
               primary="Top"
             />
           </ListItem>

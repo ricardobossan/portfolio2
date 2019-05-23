@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
+import { red, purple } from '@material-ui/core/colors';
 /* import { HashRouter as Router, Route, Switch } from 'react-router-dom';
  */
 import '../styles/styles.css';
@@ -19,7 +20,6 @@ import Hidden from '@material-ui/core/Hidden';
 
 /** @theme palette https://material.io/tools/color/#!/?view.left=1&view.right=0&primary.color=2d5e72&secondary.color=0d3645 */
 const mainTheme = createMuiTheme(theme);
-
 /* 
 // Ensures handleScroll is also called if window is scrolled by controlling the window.scrollbars, or typing `up` or `down` on the keyboard
 if (window.innerWidth >= 800) {
@@ -27,6 +27,11 @@ if (window.innerWidth >= 800) {
 }
  */
 function App(props) {
+  /*   mainTheme.palette.background.paper = '000';
+  mainTheme.palette.type = 'dark';
+ */ console.log(
+    mainTheme
+  );
   const { viewSelect, swipeTop, swipeProjects, swipeContact } = props;
   const handleScroll = () => {
     const action =

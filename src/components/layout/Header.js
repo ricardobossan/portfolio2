@@ -31,9 +31,11 @@ const styles = theme => ({
     marginRight: 20
   },
   AppBar: {
-    position: 'fixed',
+    position: 'fixed'
+
     /*background:  '#00000090' */
-    background: '#0d3645'
+    /*     background: '#0d3645'
+     */
   }
 });
 
@@ -41,7 +43,7 @@ function ButtonAppBar(props) {
   const { classes } = props;
   return (
     <header className={classes.root}>
-      <AppBar className={classes.AppBar} position="static">
+      <AppBar className={classes.AppBar} color="secondary" position="static">
         <Toolbar>
           <Grid container direction="row">
             <Typography variant="h6" color="inherit" className={classes.grow}>
