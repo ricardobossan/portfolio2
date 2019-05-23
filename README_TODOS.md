@@ -1,6 +1,6 @@
 # TODOS <!-- omit in toc -->
 
-**Current _@todo_**:
+**Current _@todo_**: [Desktop breakpoint](#desktop-breakpoint)
 
  <!-- omit in toc -->
 
@@ -11,32 +11,33 @@
 - [~~Components~~](#components)
   - [~~Header~~](#header)
     - [~~Prototype~~](#prototype)
-    - [~~Refinement~~](#refinement)
       - [~~Desktop View~~](#desktop-view)
   - [~~Footer~~](#footer)
     - [~~Prototype~~](#prototype-1)
       - [~~Add a store for Footer.state.value, with a Redux store, in order to be able to set all components to act according to the current navigation icon selected, and for screen swipes also change the navigatino icons.~~](#add-a-store-for-footerstatevalue-with-a-redux-store-in-order-to-be-able-to-set-all-components-to-act-according-to-the-current-navigation-icon-selected-and-for-screen-swipes-also-change-the-navigatino-icons)
-    - [~~Refinement~~](#refinement-1)
+    - [Refinement](#refinement)
 - [Views](#views)
   - [View "/"](#view-%22%22)
     - [~~Prototype~~](#prototype-2)
-    - [Refinement](#refinement)
-  - [View "/portfolio"](#view-%22portfolio%22)
-    - [Prototype](#prototype)
     - [Refinement](#refinement-1)
+  - [View "/portfolio"](#view-%22portfolio%22)
+    - [Refinement](#refinement-2)
   - [View "/contact"](#view-%22contact%22)
     - [~~Prototype~~](#prototype-3)
-    - [Refinement](#refinement-2)
+    - [Refinement](#refinement-3)
   - [~~Navigation ( BottomNavigation / Swiping / Scrolling)~~](#navigation--bottomnavigation--swiping--scrolling)
     - [Credits](#credits)
     - [~~Prototype~~](#prototype-4)
-    - [~~Refinement~~](#refinement-2)
+    - [~~Refinement~~](#refinement)
       - [~~Scrolling methodsMethods~~](#scrolling-methodsmethods)
         - [~~Method 1: -window.scrollTo(x,y)~~](#method-1--windowscrolltoxy)
       - [Unintended Behavior](#unintended-behavior)
 - [Tablet (width>=1024px && width <1366px) breakpoint](#tablet-width1024px--width-1366px-breakpoint)
-- [Desktop breakpoint](#desktop-breakpoint)
-  - [Prototype](#prototype-1)
+- [~~Desktop breakpoint~~](#desktop-breakpoint)
+  - [~~Prototype~~](#prototype-5)
+  - [~~Refinement~~](#refinement-1)
+- [General Refinement](#general-refinement)
+  - [Mobile View Screen Sometimes Horizontaly Seems Swiped a Single Px Out of Bounds](#mobile-view-screen-sometimes-horizontaly-seems-swiped-a-single-px-out-of-bounds)
 - [Future Improvements](#future-improvements)
 - [Copyright & Trademark](#copyright--trademark)
 
@@ -59,8 +60,6 @@
 - ~~take away hamburger menu~~
 
 - ~~make AppBar match the theme's color~~
-
-#### ~~Refinement~~
 
 ##### ~~Desktop View~~
 
@@ -104,7 +103,7 @@
         - ~~Selected button matches view. Default selected button is `Projects`, if view not `top` or `contact` (**or default is `top`. If `!top` && `!contact`, is `project`**)~~
         - ~~**TASK: create action/reducer**~~
 
-#### ~~Refinement~~
+#### Refinement
 
 - ~~Change unselected navigation icons color to white, matching those on the AppBar~~
 
@@ -124,12 +123,11 @@
 - ~~Only in this View, Switch Header and Footer component's background to '#00000090', else, back to '#2d5f72'~~
 
 - ~~Choose Typography for Logo, and if it is gonna be only text or if there's gonna be a image for my brand.~~
+- `Scroll down` call to action should be a little further down.
 - Change hero image, because the first one was in russian, and displays the hardware's logo, which could bring problems.
 - Maybe add a redux store `Desktop | Mobile`, that, switches text between `Scroll | Swipe`
 
 ### View "/portfolio"
-
-#### Prototype
 
 #### Refinement
 
@@ -193,7 +191,7 @@ window.scrollTo(0, (window.screen.availHeight*10) )
 - ~~social should be closer to each other~~.
 - ~~Slideshows should wrap~~.
 
-## Desktop breakpoint
+## ~~Desktop breakpoint~~
 
 - ~~Decide design. Between:~~
   - ~~Using css breakpoints and material ui theme breakpoints~~
@@ -202,12 +200,12 @@ window.scrollTo(0, (window.screen.availHeight*10) )
 - ~~Hide bottom navigation~~
   - ~~Switch it's functionality to a :point_right: left aside or top the center of the Top App Bar, without icons.~~
 
-### Prototype
+### ~~Prototype~~
 
 - ~~Hide componet `Footer / NavigationBottom`.~~
 - ~~And replace it by mounting a left `<aside>`, or material ui equivalent component.~~
-  - Use [secondary, in themes][muithemes], for styling selected tab in `<aside>`
-    - Use this JSS in the class, and make it be the iten's style when the redux state matches that item (found in [Mui docs for MenuItem][menuitem]):
+  - ~~Use [secondary, in themes][muithemes], for styling selected tab in `<aside>`~~
+    - ~~Use this JSS in the class, and make it be the iten's style when the redux state matches that item (found in [Mui docs for MenuItem][menuitem]):~~
 
 ```
   '&:focus': {
@@ -218,10 +216,17 @@ window.scrollTo(0, (window.screen.availHeight*10) )
     },
 ```
 
-    - Check [tutorial][muithemetutorial]
+    - ~~Check [tutorial][muithemetutorial]~~
 
-- `<aside>` should have the same functionality as the Footer
-- Do some styling to diferentiate the current view, so it won't be boring and so it is good looking.
+- ~~`<aside>` should have the same functionality as the Footer~~
+
+### ~~Refinement~~
+
+- ~~Do some styling to diferentiate the current view, so it won't be boring and so it is good looking~~.
+
+## General Refinement
+
+### Mobile View Screen Sometimes Horizontaly Seems Swiped a Single Px Out of Bounds
 
 ## Future Improvements
 

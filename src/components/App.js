@@ -124,7 +124,9 @@ function App(props) {
           </Router>
   */}{' '}
           </div>
-          <Footer />
+          <Hidden lgUp>
+            <Footer />
+          </Hidden>
         </React.Fragment>
       </MuiThemeProvider>
     </div>

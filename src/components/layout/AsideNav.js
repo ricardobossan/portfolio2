@@ -1,9 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+
+import { viewTop, viewProjects, viewContact } from '../../actions';
 
 const styles = theme => ({
   root: {
@@ -29,39 +32,79 @@ const styles = theme => ({
   asideItemText: {
     textAlign: 'center',
     fontSize: '2em'
+  },
+  asideItemTextSelected: {
+    textAlign: 'center',
+    fontSize: '2em',
+    color: theme.palette.primary.main,
+    fontWeight: 'bold'
   }
 });
 
-class NestedList extends React.Component {
+class AsideNav extends React.Component {
+  handleViewSwitch = async action => {
+    // "Gambiarra", to call action and, at the same time, save one if it's returned values for scrolling to it, without using async logic.
+    const actionReturnValues = action();
+    // Side effect. Need applyMiddleware and react-thunk, to make the dispatch asyncronous, conditioning side effects to it
+    window.scrollTo({
+      left: 0,
+      top: actionReturnValues.dispatch.screenY,
+      behavior: 'smooth'
+    });
+  };
+
   render() {
-    const { classes } = this.props;
-    console.log(classes);
+    const {
+      viewSelect,
+      viewTop,
+      viewProjects,
+      viewContact,
+      classes
+    } = this.props;
+    console.log(this.props);
     return (
       <div>
         <List component="nav" className={classes.root}>
-          <ListItem className={classes.asideItem} button>
+          <ListItem
+            onClick={() => this.handleViewSwitch(viewTop)}
+            classes={{ primary: classes.asideItem }}
+            button
+          >
             <ListItemText
-              onClick={this.handleClick}
-              classes={{
-                primary: classes.asideItemText
-              }}
+              color="primary"
+              classes={
+                viewSelect.view === 0
+                  ? { primary: classes.asideItemTextSelected }
+                  : { primary: classes.asideItemText }
+              }
               primary="Top"
             />
           </ListItem>
-          <ListItem className={classes.asideItem} button>
+          <ListItem
+            onClick={() => this.handleViewSwitch(viewProjects)}
+            classes={{ primary: classes.asideItem }}
+            button
+          >
             <ListItemText
-              onClick={this.handleClick}
-              classes={{ primary: classes.asideItemText }}
+              classes={
+                viewSelect.view === 1
+                  ? { primary: classes.asideItemTextSelected }
+                  : { primary: classes.asideItemText }
+              }
               primary="Projects"
             />
           </ListItem>
           <ListItem
-            className={classes.asideItem}
+            onClick={() => this.handleViewSwitch(viewContact)}
+            classes={{ primary: classes.asideItem }}
             button
-            onClick={this.handleClick}
           >
             <ListItemText
-              classes={{ primary: classes.asideItemText }}
+              classes={
+                viewSelect.view === 2
+                  ? { primary: classes.asideItemTextSelected }
+                  : { primary: classes.asideItemText }
+              }
               primary="Contact"
             />
           </ListItem>
@@ -71,8 +114,18 @@ class NestedList extends React.Component {
   }
 }
 
-NestedList.propTypes = {
+AsideNav.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(NestedList);
+const mapStateToProps = state => state;
+const mapDispatchToProps = {
+  viewTop,
+  viewProjects,
+  viewContact
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withStyles(styles)(AsideNav));
