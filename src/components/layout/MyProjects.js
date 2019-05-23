@@ -4,6 +4,8 @@ import { withStyles } from '@material-ui/core/styles';
 
 import Portfolio from '../Portfolio';
 
+import Hidden from '@material-ui/core/Hidden';
+
 const styles = theme => ({
   root: {
     minHeight: '100vh',
@@ -20,7 +22,13 @@ function MyProjects(props) {
     <div className={classes.root}>
       <div className={classes.callToAction}>
         <Typography className={classes.typography} variant="h5">
-          Tap on a project to start it!
+          <Hidden lgUp>
+            <span>Tap </span>
+          </Hidden>
+          <Hidden mdDown>
+            <span>Click </span>
+          </Hidden>
+          on a project to start it!
         </Typography>
       </div>
       <Portfolio />

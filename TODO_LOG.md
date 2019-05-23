@@ -1,9 +1,5 @@
 # TODOS <!-- omit in toc -->
 
-**Current _@todo_**: [Desktop breakpoint](#desktop-breakpoint)
-
- <!-- omit in toc -->
-
 ## Index <!-- omit in toc -->
 
 - [~~Find Layout~~](#find-layout)
@@ -19,12 +15,12 @@
 - [Views](#views)
   - [View "/"](#view-%22%22)
     - [~~Prototype~~](#prototype-2)
-    - [Refinement](#refinement-1)
+    - [Refinement 👈](#refinement-%F0%9F%91%88)
   - [View "/portfolio"](#view-%22portfolio%22)
-    - [Refinement](#refinement-2)
+    - [Refinement](#refinement-1)
   - [View "/contact"](#view-%22contact%22)
     - [~~Prototype~~](#prototype-3)
-    - [Refinement](#refinement-3)
+    - [Refinement](#refinement-2)
   - [~~Navigation ( BottomNavigation / Swiping / Scrolling)~~](#navigation--bottomnavigation--swiping--scrolling)
     - [Credits](#credits)
     - [~~Prototype~~](#prototype-4)
@@ -38,8 +34,11 @@
   - [~~Refinement~~](#refinement-1)
 - [General Refinement](#general-refinement)
   - [Mobile View Screen Sometimes Horizontaly Seems Swiped a Single Px Out of Bounds](#mobile-view-screen-sometimes-horizontaly-seems-swiped-a-single-px-out-of-bounds)
+- [Finalize](#finalize)
 - [Future Improvements](#future-improvements)
 - [Copyright & Trademark](#copyright--trademark)
+
+## :point_down: TODO CONTENT :point_down: <!-- omit in toc -->
 
 ## ~~Find Layout~~
 
@@ -118,14 +117,15 @@
 
 - ~~Choose start view's "/" image~~
 
-#### Refinement
+#### Refinement 👈
 
 - ~~Only in this View, Switch Header and Footer component's background to '#00000090', else, back to '#2d5f72'~~
 
 - ~~Choose Typography for Logo, and if it is gonna be only text or if there's gonna be a image for my brand.~~
-- `Scroll down` call to action should be a little further down.
+- ~~`Scroll down` call to action should be a little further down.~~
+- ~~Maybe add a redux store `Desktop | Mobile`, that, switches text between `Scroll | Swipe`~~
+  - ~~Insted, solve it by using Hidden tags around spans for each word `scroll | swipe`.~~
 - Change hero image, because the first one was in russian, and displays the hardware's logo, which could bring problems.
-- Maybe add a redux store `Desktop | Mobile`, that, switches text between `Scroll | Swipe`
 
 ### View "/portfolio"
 
@@ -184,7 +184,6 @@ window.scrollTo(0, (window.screen.availHeight*10) )
 ##### Unintended Behavior
 
 - If swipe is long, it may hit Top or Bottom view without activating the action for selecting the respective view in the BottomNavigation bar. May be solved by adding a check at `scrollY === 0` and `scrolly >= window.scrollHeight - window.screen.availHeight -1`. Add a setTimeout for 1000ms, so it won't call too many times.
-- onScroll not activating on desktop, neither by interacting with the scroll bar, nor with the keyboard inputs (`down`, `pgDown`, `home`, etc.)
 
 ## Tablet (width>=1024px && width <1366px) breakpoint
 
@@ -227,6 +226,10 @@ window.scrollTo(0, (window.screen.availHeight*10) )
 ## General Refinement
 
 ### Mobile View Screen Sometimes Horizontaly Seems Swiped a Single Px Out of Bounds
+
+## Finalize
+
+- Create a full sketch of react-redux functionality
 
 ## Future Improvements
 

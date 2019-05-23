@@ -4,6 +4,8 @@ import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 
+import Hidden from '@material-ui/core/Hidden';
+
 /**
  * @todo choose better typografy for `heroMessage`.
  * @todo find out how to change the `ChevronTripleDown` color in `heroMessage`.
@@ -30,6 +32,7 @@ const styles = theme => ({
     position: 'static',
     height: '100vh',
     paddingTop: theme.spacing.unit * 14,
+    [theme.breakpoints.up('lg')]: { paddingTop: theme.spacing.unit * 21 },
     paddingLeft: theme.spacing.unit * 8,
     paddingRight: theme.spacing.unit * 8,
     background: '#ffffff00'
@@ -58,7 +61,13 @@ function Hero(props) {
 
       <Paper className={classes.heroMessage} elevation={0}>
         <Typography className={classes.scrollDown} variant="h4" component="h4">
-          Scroll down for projects.
+          <Hidden lgUp>
+            <span>Swipe </span>
+          </Hidden>
+          <Hidden mdDown>
+            <span>Scroll </span>
+          </Hidden>
+          down for projects.
         </Typography>
       </Paper>
     </div>
