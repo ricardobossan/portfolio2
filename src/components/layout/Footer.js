@@ -27,7 +27,7 @@ const styles = {
 };
 
 class Footer extends React.Component {
-  handleViewSwitch = async action => {
+  handleViewSwitch = action => {
     // "Gambiarra", to call action and, at the same time, save one if it's returned values for scrolling to it, without using async logic.
     const actionReturnValues = action();
     // Side effect. Need applyMiddleware and react-thunk, to make the dispatch asyncronous, conditioning side effects to it

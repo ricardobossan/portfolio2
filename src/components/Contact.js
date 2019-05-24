@@ -1,8 +1,6 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+import { TextField, Typography, Button, Link } from '@material-ui/core';
 
 const styles = theme => ({
   root: {
@@ -135,15 +133,24 @@ class Contact extends React.Component {
           </Button>
         </form>
         <div style={{ marginTop: '50px' }}>
-          <Button className={classes.Button} elevation={1}>
-            <Typography variant="h5">LinkedIn</Typography>
-          </Button>
-          <Button className={classes.Button} elevation={1}>
-            <Typography variant="h5">GitHub</Typography>
-          </Button>
-          <Button className={classes.Button} elevation={1}>
-            <Typography variant="h5">Twitter</Typography>
-          </Button>
+          <Link
+            href="https://www.linkedin.com/in/ricardo-bossan"
+            underline="none"
+          >
+            <Button className={classes.Button} elevation={1}>
+              <Typography variant="h5">LinkedIn</Typography>
+            </Button>
+          </Link>
+          <Link href="https://github.com/ricardobossan" underline="none">
+            <Button className={classes.Button} elevation={1}>
+              <Typography variant="h5">GitHub</Typography>
+            </Button>
+          </Link>
+          <Link href="https://twitter.com/BossanRicardo" underline="none">
+            <Button className={classes.Button} elevation={1}>
+              <Typography variant="h5">Twitter</Typography>
+            </Button>
+          </Link>
         </div>
       </div>
     );
