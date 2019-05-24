@@ -17,7 +17,7 @@
     - [~~Prototype~~](#prototype-2)
     - [Refinement](#refinement)
   - [View "/portfolio"](#view-%22portfolio%22)
-    - [Refinement](#refinement-1)
+    - [Refinement 👈](#refinement-%F0%9F%91%88)
   - [~~View "/contact"~~](#view-%22contact%22)
     - [~~Prototype~~](#prototype-3)
     - [~~Refinement~~](#refinement-1)
@@ -34,7 +34,7 @@
   - [~~Prototype~~](#prototype-5)
   - [~~Refinement~~](#refinement-3)
 - [General Refinement](#general-refinement)
-  - [Social Icons Send User to My Social Profiles 👈](#social-icons-send-user-to-my-social-profiles-%F0%9F%91%88)
+  - [~~Social Icons Send User to My Social Profiles~~](#social-icons-send-user-to-my-social-profiles)
   - [Mobile View Screen Sometimes Horizontaly Seems Swiped a Single Px Out of Bounds](#mobile-view-screen-sometimes-horizontaly-seems-swiped-a-single-px-out-of-bounds)
 - [Finalize](#finalize)
 - [Future Improvements](#future-improvements)
@@ -131,7 +131,7 @@
 
 ### View "/portfolio"
 
-#### Refinement
+#### Refinement 👈
 
 - Choose which projects to display
 - take screenshots of apps and replace images in the slideshow
@@ -256,10 +256,11 @@ window.scrollTo(0, (window.screen.availHeight*10) )
 
 ## General Refinement
 
-### Social Icons Send User to My Social Profiles 👈
+### ~~Social Icons Send User to My Social Profiles~~
 
-- Header mail icon goes to the right view, but doesn't change BottomNavigation selected tab, like it's not connected to Redux. On Redux DevTools, no action is dispatched, when clicked on the icon
-  - Got to either fix lack of connection between Header and Redux, or simply get rid of the mail icon.
+- ~~Header mail icon goes to the right view, but doesn't change BottomNavigation selected tab, like it's not connected to Redux. On Redux DevTools, no action is dispatched, when clicked on the icon~~
+  - ~~Got to either fix lack of connection between Header and Redux, or simply get rid of the mail icon. ~~
+    - ~~Had forgotten to destructure action in component.~~
 
 ### Mobile View Screen Sometimes Horizontaly Seems Swiped a Single Px Out of Bounds
 
