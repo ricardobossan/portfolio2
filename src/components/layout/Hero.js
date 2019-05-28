@@ -17,7 +17,7 @@ const styles = theme => ({
     position: 'relative'
   },
   img: {
-    opacity: '0.4',
+    opacity: '0.6',
     position: 'absolute',
     minWidth: '100%',
     minHeight: '100%',
@@ -38,6 +38,7 @@ const styles = theme => ({
     background: '#ffffff00'
   },
   scrollDown: {
+    textShadow: '0 0 3px #000, 0 0 5px #000',
     textAlign: 'center'
   },
   ChevronTripleDown: {
