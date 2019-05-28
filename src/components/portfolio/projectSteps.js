@@ -3,16 +3,20 @@ const projectSteps = [
     id: 0,
     label: 'Neighbourhood Food Map',
     imgPath: [
-      'http://www.ricardobossan.com/images/7-640_Small_1x_or_Large_2x.png',
-      'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60'
+      'https://github.com/ricardobossan/portfolio2/blob/master/src/images/projectImages/0-1280x720.png?raw=true',
+      'https://github.com/ricardobossan/portfolio2/blob/master/src/images/projectImages/0_1280x720_iPhone.png?raw=true',
+      'https://github.com/ricardobossan/portfolio2/blob/master/src/images/projectImages/0_1280x720_iPad.png?raw=true'
     ]
   },
   {
     label: 'MyReads',
     id: 1,
     imgPath: [
-      'http://www.ricardobossan.com/images/8-640_Small_1x_or_Large_2x.png',
-      'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60'
+      'https://github.com/ricardobossan/portfolio2/blob/master/src/images/projectImages/1_1280x720_iPad.png?raw=true',
+      'https://github.com/ricardobossan/portfolio2/blob/master/src/images/projectImages/1_1280x720_iPhone.png?raw=true',
+      'https://github.com/ricardobossan/portfolio2/blob/master/src/images/projectImages/1_1280x720_iPhone2.png?raw=true',
+      'https://github.com/ricardobossan/portfolio2/blob/master/src/images/projectImages/1_1280x720_iPhone3.png?raw=true',
+      'https://github.com/ricardobossan/portfolio2/blob/master/src/images/projectImages/1_1280x720_iPhone4.png?raw=true'
     ]
   },
   {
