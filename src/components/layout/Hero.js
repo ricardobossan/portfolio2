@@ -17,10 +17,10 @@ const styles = theme => ({
     position: 'relative'
   },
   img: {
-    opacity: '0.9',
+    opacity: '0.4',
     position: 'absolute',
-    width: '140%',
-    height: '140%',
+    minWidth: '100%',
+    minHeight: '100%',
     objectFit: 'cover',
     overflow: 'hidden',
     top: '0',
@@ -31,7 +31,7 @@ const styles = theme => ({
     ...theme.mixins.gutters(),
     position: 'static',
     height: '100vh',
-    paddingTop: theme.spacing.unit * 14,
+    paddingTop: '45vh',
     [theme.breakpoints.up('lg')]: { paddingTop: theme.spacing.unit * 21 },
     paddingLeft: theme.spacing.unit * 8,
     paddingRight: theme.spacing.unit * 8,
@@ -50,15 +50,6 @@ function Hero(props) {
 
   return (
     <div className={classes.root}>
-      <div>
-        <img
-          className={classes.img}
-          style={{ width: '100%' }}
-          src="https://images.unsplash.com/photo-1549820803-0aa4a001449f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"
-          alt="A Person's back, contemplating the mountains on a sunny day"
-        />
-      </div>
-
       <Paper className={classes.heroMessage} elevation={0}>
         <Typography className={classes.scrollDown} variant="h4" component="h4">
           <Hidden lgUp>
@@ -70,6 +61,14 @@ function Hero(props) {
           down for projects.
         </Typography>
       </Paper>
+      <div>
+        <img
+          className={classes.img}
+          style={{ width: '100%' }}
+          src="https://images.unsplash.com/photo-1558655146-364adaf1fcc9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjF9&auto=format&fit=crop&w=700&q=80"
+          alt="A Person's back, contemplating the mountains on a sunny day"
+        />
+      </div>
     </div>
   );
 }
