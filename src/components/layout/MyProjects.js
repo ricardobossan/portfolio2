@@ -2,11 +2,11 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 
-import Portfolio from '../Portfolio';
+import Portfolio from '../portfolio/Portfolio';
 
 import Hidden from '@material-ui/core/Hidden';
 
-const styles = theme => ({
+const styles = () => ({
   root: {
     minHeight: '100vh',
     background: '#2d5f72',

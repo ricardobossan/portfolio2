@@ -133,9 +133,12 @@
 
 #### Refinement 👈
 
+- Make structure projectSteps.js show each project data
+  - The way it is now, it won't show the projectIndex prop on SwipeableTextMobileStepper.js
+    - maybe I could import projectSteps.js to Portfolio.js and inject it as an argument into a function that calls `.map()` through it to return an element with the data for each project in the `projectSteps` array
 - Choose which projects to display
 - take screenshots of apps and replace images in the slideshow
-- Change each slideshow's texto to the name and description of it's app.
+- Change each slideshow's text to the name and extremally brief description of it's app.
 
 ### ~~View "/contact"~~
 
