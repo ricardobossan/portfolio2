@@ -17,7 +17,7 @@ const styles = theme => ({
     position: 'relative'
   },
   img: {
-    opacity: '0.6',
+    opacity: '0.5',
     position: 'absolute',
     minWidth: '100%',
     minHeight: '100%',
