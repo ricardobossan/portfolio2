@@ -56,7 +56,7 @@ class Contact extends React.Component {
   /*   inputChange = (e) => this.setState({e.target.name})
    */
   submitForm = () => {
-    this.setState({ Name: '', Email: '', Message: '' });
+    setTimeout(() => this.setState({ Name: '', Email: '', Message: '' }), 1000);
     /*     this.nameInput.current.state = '';
     this.emailInput.current.state = '';
     this.messageInput.current.state = '';

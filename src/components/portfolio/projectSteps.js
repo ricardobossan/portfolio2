@@ -15,8 +15,7 @@ const projectSteps = [
       'https://github.com/ricardobossan/portfolio2/blob/master/src/images/projectImages/1_1280x720_desk.png?raw=true',
       'https://github.com/ricardobossan/portfolio2/blob/master/src/images/projectImages/1_1280x720_iPhone.png?raw=true',
       'https://github.com/ricardobossan/portfolio2/blob/master/src/images/projectImages/1_1280x720_iPhone2.png?raw=true',
-      'https://github.com/ricardobossan/portfolio2/blob/master/src/images/projectImages/1_1280x720_iPhone3.png?raw=true',
-      'https://github.com/ricardobossan/portfolio2/blob/master/src/images/projectImages/1_1280x720_iPhone4.png?raw=true'
+      'https://github.com/ricardobossan/portfolio2/blob/master/src/images/projectImages/1_1280x720_iPhone3.png?raw=true'
     ]
   },
   {

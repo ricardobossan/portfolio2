@@ -30,7 +30,7 @@
         - [~~Method 1: -window.scrollTo(x,y)~~](#method-1--windowscrolltoxy)
       - [Unintended Behavior](#unintended-behavior)
 - [~~Tablet (width>=1024px && width <1366px) breakpoint~~](#tablet-width1024px--width-1366px-breakpoint)
-- [~~Desktop breakpoint~~](#desktop-breakpoint)
+- [❗️ Desktop Breakpoint ❗ ️](#%E2%9D%97%EF%B8%8F-desktop-breakpoint-%E2%9D%97-%EF%B8%8F)
   - [~~Prototype~~](#prototype-5)
   - [~~Refinement~~](#refinement-3)
 - [General Refinement](#general-refinement)
@@ -133,12 +133,13 @@
 
 #### Refinement 👈
 
-- Make structure projectSteps.js show each project data
-  - The way it is now, it won't show the projectIndex prop on SwipeableTextMobileStepper.js
-    - maybe I could import projectSteps.js to Portfolio.js and inject it as an argument into a function that calls `.map()` through it to return an element with the data for each project in the `projectSteps` array
-- Choose which projects to display
-- take screenshots of apps and replace images in the slideshow
-- Change each slideshow's text to the name and extremally brief description of it's app.
+- ~~Make structure projectSteps.js show each project data~~
+  - ~~The way it is now, it won't show the projectIndex prop on SwipeableTextMobileStepper.js~~
+    - ~~maybe I could import projectSteps.js to Portfolio.js and inject it as an argument into a function that calls `.map()` through it to return an element with the data for each project in the `projectSteps` array~~
+- ~~Choose which projects to display~~
+- ~~take screenshots of apps and replace images in the slideshow~~
+- Project images for `Cat Clicker` mobile view who are too little to see it's details should be cut so details are more visible. Do the same thing for the `Memory Game` victory mobile view.
+- Can I slow down the slideshows a bit
 
 ### ~~View "/contact"~~
 
@@ -157,6 +158,7 @@
 
 - ~~See if it can be done with a 3rd party package or service.~~
 - ~~Reset fields after send.~~
+  - ~~`The reset fields after send` generates and email with empty fields. Maybe setTimeout would be enough to fix it.~~
 - ~~Methods:~~
 
   - **Method #1**: [Open OS Email Client, Filled By Form Input][emailclient]
@@ -224,7 +226,7 @@ window.scrollTo(0, (window.screen.availHeight*10) )
 - ~~social should be closer to each other~~.
 - ~~Slideshows should wrap~~.
 
-## ~~Desktop breakpoint~~
+## ❗️ Desktop Breakpoint ❗ ️
 
 - ~~Decide design. Between:~~
   - ~~Using css breakpoints and material ui theme breakpoints~~
@@ -232,6 +234,8 @@ window.scrollTo(0, (window.screen.availHeight*10) )
   - ~~:point_right: Both approaches (CSS Breakpoints in material UI && redux state for phone, tablet and desktop, for eventual features):point_left:~~
 - ~~Hide bottom navigation~~
   - ~~Switch it's functionality to a :point_right: left aside or top the center of the Top App Bar, without icons.~~
+- Scrolling to a view should call `.focus()` on it, so it will be `selected`.
+  - This can be achieved using [React refs][refs]
 
 ### ~~Prototype~~
 
@@ -269,6 +273,7 @@ window.scrollTo(0, (window.screen.availHeight*10) )
 
 ## Finalize
 
+- Git rid of desktop view horizontal scrollbar
 - Create a full sketch of react-redux functionality
 
 ## Future Improvements
