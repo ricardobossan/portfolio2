@@ -27,11 +27,6 @@ if (window.innerWidth >= 800) {
 }
  */
 function App(props) {
-  /*   mainTheme.palette.background.paper = '000';
-  mainTheme.palette.type = 'dark';
- */ console.log(
-    mainTheme
-  );
   const { viewSelect, swipeTop, swipeProjects, swipeContact } = props;
   const handleScroll = () => {
     const action =

@@ -13,26 +13,26 @@
       - [~~Add a store for Footer.state.value, with a Redux store, in order to be able to set all components to act according to the current navigation icon selected, and for screen swipes also change the navigatino icons.~~](#add-a-store-for-footerstatevalue-with-a-redux-store-in-order-to-be-able-to-set-all-components-to-act-according-to-the-current-navigation-icon-selected-and-for-screen-swipes-also-change-the-navigatino-icons)
     - [~~Refinement~~](#refinement)
 - [Views](#views)
-  - [View "/"](#view-%22%22)
+  - [~~View "/"~~](#view-%22%22)
     - [~~Prototype~~](#prototype-2)
-    - [Refinement](#refinement)
+    - [~~Refinement~~](#refinement-1)
   - [View "/portfolio"](#view-%22portfolio%22)
     - [Refinement 👈](#refinement-%F0%9F%91%88)
   - [~~View "/contact"~~](#view-%22contact%22)
     - [~~Prototype~~](#prototype-3)
-    - [~~Refinement~~](#refinement-1)
+    - [~~Refinement~~](#refinement-2)
       - [~~Implement functionality, so the form will send messages to my professional email.~~](#implement-functionality-so-the-form-will-send-messages-to-my-professional-email)
   - [~~Navigation ( BottomNavigation / Swiping / Scrolling)~~](#navigation--bottomnavigation--swiping--scrolling)
     - [Credits](#credits)
     - [~~Prototype~~](#prototype-4)
-    - [~~Refinement~~](#refinement-2)
+    - [~~Refinement~~](#refinement-3)
       - [~~Scrolling methodsMethods~~](#scrolling-methodsmethods)
         - [~~Method 1: -window.scrollTo(x,y)~~](#method-1--windowscrolltoxy)
       - [Unintended Behavior](#unintended-behavior)
 - [~~Tablet (width>=1024px && width <1366px) breakpoint~~](#tablet-width1024px--width-1366px-breakpoint)
-- [❗️ Desktop Breakpoint ❗ ️](#%E2%9D%97%EF%B8%8F-desktop-breakpoint-%E2%9D%97-%EF%B8%8F)
+- [~~Desktop Breakpoint~~](#desktop-breakpoint)
   - [~~Prototype~~](#prototype-5)
-  - [~~Refinement~~](#refinement-3)
+  - [~~Refinement~~](#refinement-4)
 - [General Refinement](#general-refinement)
   - [~~Social Icons Send User to My Social Profiles~~](#social-icons-send-user-to-my-social-profiles)
   - [Mobile View Screen Sometimes Horizontaly Seems Swiped a Single Px Out of Bounds](#mobile-view-screen-sometimes-horizontaly-seems-swiped-a-single-px-out-of-bounds)
@@ -113,13 +113,13 @@
 
 ## Views
 
-### View "/"
+### ~~View "/"~~
 
 #### ~~Prototype~~
 
 - ~~Choose start view's "/" image~~
 
-#### Refinement
+#### ~~Refinement~~
 
 - ~~Only in this View, Switch Header and Footer component's background to '#00000090', else, back to '#2d5f72'~~
 
@@ -127,7 +127,7 @@
 - ~~`Scroll down` call to action should be a little further down.~~
 - ~~Maybe add a redux store `Desktop | Mobile`, that, switches text between `Scroll | Swipe`~~
   - ~~Insted, solve it by using Hidden tags around spans for each word `scroll | swipe`.~~
-- Change hero image, because the first one was in russian, and displays the hardware's logo, which could bring problems.
+- ~~Change hero image, because the first one was in russian, and displays the hardware's logo, which could bring problems.~~
 
 ### View "/portfolio"
 
@@ -138,8 +138,9 @@
     - ~~maybe I could import projectSteps.js to Portfolio.js and inject it as an argument into a function that calls `.map()` through it to return an element with the data for each project in the `projectSteps` array~~
 - ~~Choose which projects to display~~
 - ~~take screenshots of apps and replace images in the slideshow~~
-- Project images for `Cat Clicker` mobile view who are too little to see it's details should be cut so details are more visible. Do the same thing for the `Memory Game` victory mobile view.
+- ~~Project images for `Cat Clicker` mobile view who are too little to see it's details should be cut so details are more visible. Do the same thing for the `Memory Game` victory mobile view.~~
 - Can I slow down the slideshows a bit
+- Anchor tags on each app on the list should send to the respective app, hosted at Heroku.
 
 ### ~~View "/contact"~~
 
@@ -226,7 +227,7 @@ window.scrollTo(0, (window.screen.availHeight*10) )
 - ~~social should be closer to each other~~.
 - ~~Slideshows should wrap~~.
 
-## ❗️ Desktop Breakpoint ❗ ️
+## ~~Desktop Breakpoint~~
 
 - ~~Decide design. Between:~~
   - ~~Using css breakpoints and material ui theme breakpoints~~
@@ -234,8 +235,9 @@ window.scrollTo(0, (window.screen.availHeight*10) )
   - ~~:point_right: Both approaches (CSS Breakpoints in material UI && redux state for phone, tablet and desktop, for eventual features):point_left:~~
 - ~~Hide bottom navigation~~
   - ~~Switch it's functionality to a :point_right: left aside or top the center of the Top App Bar, without icons.~~
-- Scrolling to a view should call `.focus()` on it, so it will be `selected`.
-  - This can be achieved using [React refs][refs]
+- ~~Scrolling to a view should call `.focus()` on it, so it will be `selected`.~~
+  - ~~This can be achieved using [React refs][refs]~~
+    - ~~solved by removing the property `button` from Mui class ListItem~~
 
 ### ~~Prototype~~
 
@@ -274,6 +276,7 @@ window.scrollTo(0, (window.screen.availHeight*10) )
 ## Finalize
 
 - Git rid of desktop view horizontal scrollbar
+- Clean commented out code.
 - Create a full sketch of react-redux functionality
 
 ## Future Improvements
