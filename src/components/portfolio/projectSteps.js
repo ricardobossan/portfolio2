@@ -23,32 +23,39 @@ const projectSteps = [
     id: 2,
     label: 'Restaurante Reviews',
     imgPath: [
-      'https://github.com/ricardobossan/Restaurant-Reviews-WebApp/blob/master/img/app.png?raw=true',
-      'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60'
+      'https://github.com/ricardobossan/portfolio2/blob/master/src/images/projectImages/2_1280x720_desk.png?raw=true',
+      'https://github.com/ricardobossan/portfolio2/blob/master/src/images/projectImages/2_1280x720_iPhone.png?raw=true',
+      'https://github.com/ricardobossan/portfolio2/blob/master/src/images/projectImages/2_1280x720_iPhone1.png?raw=true',
+      'https://github.com/ricardobossan/portfolio2/blob/master/src/images/projectImages/2_1280x720_iPhone2.png?raw=true',
+      'https://github.com/ricardobossan/portfolio2/blob/master/src/images/projectImages/2_1280x720_iPhone3.png?raw=true'
     ]
   },
   {
     label: 'Classic Arcade Game',
     id: 3,
     imgPath: [
-      'https://github.com/ricardobossan/arcade-game/blob/master/images/app.png?raw=true',
-      'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60'
+      'https://github.com/ricardobossan/portfolio2/blob/master/src/images/projectImages/3_1280x720_desk.png?raw=true',
+      'https://github.com/ricardobossan/portfolio2/blob/master/src/images/projectImages/3_1280x720_desk1.png?raw=true'
     ]
   },
   {
     label: 'Cat Clicker - Cute WebApp',
     id: 4,
     imgPath: [
-      'https://github.com/ricardobossan/cat-clicker/blob/master/app.png?raw=true',
-      'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60'
+      'https://github.com/ricardobossan/portfolio2/blob/master/src/images/projectImages/4_1280x720_desk.png?raw=true',
+      'https://github.com/ricardobossan/portfolio2/blob/master/src/images/projectImages/4_1280x720_iPhone.png?raw=true',
+      'https://github.com/ricardobossan/portfolio2/blob/master/src/images/projectImages/4_1280x720_iPhone1.png?raw=true',
+      'https://github.com/ricardobossan/portfolio2/blob/master/src/images/projectImages/4_1280x720_iPhone2.png?raw=true'
     ]
   },
   {
     label: 'Memory Game - Made in JS',
     id: 5,
     imgPath: [
-      'https://github.com/ricardobossan/fend-project-memory-game-master/blob/master/img/app.png?raw=true',
-      'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60'
+      'https://github.com/ricardobossan/portfolio2/blob/master/src/images/projectImages/5_1280x720_desk.png?raw=true',
+      'https://github.com/ricardobossan/portfolio2/blob/master/src/images/projectImages/5_1280x720_iPhone.png?raw=true',
+      'https://github.com/ricardobossan/portfolio2/blob/master/src/images/projectImages/5_1280x720_iPhone2.png?raw=true',
+      'https://github.com/ricardobossan/portfolio2/blob/master/src/images/projectImages/5_1280x720_iPhone3.png?raw=true'
     ]
   }
 ];
