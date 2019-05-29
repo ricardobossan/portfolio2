@@ -61,7 +61,6 @@ class AsideNav extends React.Component {
       viewContact,
       classes
     } = this.props;
-    console.log(this.props);
     return (
       <div>
         <List component="nav" className={classes.root}>

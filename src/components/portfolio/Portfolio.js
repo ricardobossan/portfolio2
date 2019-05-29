@@ -7,15 +7,15 @@ import projectSteps from './projectSteps';
 export default () => {
   return (
     <div>
-      {/* @todo add guard wrapper "if(mobile)" */}
       <Grid container spacing={8}>
-        {projectSteps.map(projectIndex => (
+        {projectSteps.map(project => (
           <Grid item lg={4} md={6} sm={6} xs={12}>
-            <SwipeableTextMobileStepper projectIndex={projectIndex.id} />
+            <a href={project.projectPath}>
+              <SwipeableTextMobileStepper projectIndex={project.id} />
+            </a>
           </Grid>
         ))}
       </Grid>
-      {/* @todo add guard wrapper "if(desktop)" */}
     </div>
   );
 };

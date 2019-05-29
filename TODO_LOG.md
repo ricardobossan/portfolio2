@@ -17,25 +17,23 @@
     - [~~Prototype~~](#prototype-2)
     - [~~Refinement~~](#refinement-1)
   - [View "/portfolio"](#view-%22portfolio%22)
-    - [Refinement 👈](#refinement-%F0%9F%91%88)
+    - [~~Refinement~~](#refinement-2)
   - [~~View "/contact"~~](#view-%22contact%22)
     - [~~Prototype~~](#prototype-3)
-    - [~~Refinement~~](#refinement-2)
+    - [~~Refinement~~](#refinement-3)
       - [~~Implement functionality, so the form will send messages to my professional email.~~](#implement-functionality-so-the-form-will-send-messages-to-my-professional-email)
   - [~~Navigation ( BottomNavigation / Swiping / Scrolling)~~](#navigation--bottomnavigation--swiping--scrolling)
-    - [Credits](#credits)
+    - [~~Credits~~](#credits)
     - [~~Prototype~~](#prototype-4)
-    - [~~Refinement~~](#refinement-3)
+    - [~~Refinement~~](#refinement-4)
       - [~~Scrolling methodsMethods~~](#scrolling-methodsmethods)
         - [~~Method 1: -window.scrollTo(x,y)~~](#method-1--windowscrolltoxy)
-      - [Unintended Behavior](#unintended-behavior)
 - [~~Tablet (width>=1024px && width <1366px) breakpoint~~](#tablet-width1024px--width-1366px-breakpoint)
 - [~~Desktop Breakpoint~~](#desktop-breakpoint)
   - [~~Prototype~~](#prototype-5)
-  - [~~Refinement~~](#refinement-4)
+  - [~~Refinement~~](#refinement-5)
 - [General Refinement](#general-refinement)
   - [~~Social Icons Send User to My Social Profiles~~](#social-icons-send-user-to-my-social-profiles)
-  - [Mobile View Screen Sometimes Horizontaly Seems Swiped a Single Px Out of Bounds](#mobile-view-screen-sometimes-horizontaly-seems-swiped-a-single-px-out-of-bounds)
 - [Finalize](#finalize)
 - [Future Improvements](#future-improvements)
 - [Copyright & Trademark](#copyright--trademark)
@@ -131,7 +129,7 @@
 
 ### View "/portfolio"
 
-#### Refinement 👈
+#### ~~Refinement~~
 
 - ~~Make structure projectSteps.js show each project data~~
   - ~~The way it is now, it won't show the projectIndex prop on SwipeableTextMobileStepper.js~~
@@ -139,8 +137,7 @@
 - ~~Choose which projects to display~~
 - ~~take screenshots of apps and replace images in the slideshow~~
 - ~~Project images for `Cat Clicker` mobile view who are too little to see it's details should be cut so details are more visible. Do the same thing for the `Memory Game` victory mobile view.~~
-- Can I slow down the slideshows a bit
-- Anchor tags on each app on the list should send to the respective app, hosted at Heroku.
+- ~~Anchor tags on each app on the list should send to the respective app, hosted at Heroku.~~
 
 ### ~~View "/contact"~~
 
@@ -190,7 +187,7 @@
 
 ### ~~Navigation ( BottomNavigation / Swiping / Scrolling)~~
 
-#### Credits
+#### ~~Credits~~
 
 [Handling scroll events in React - @kempsterrrr](https://www.kempsterrrr.xyz/handling-scroll-events-in-react/)
 
@@ -217,10 +214,6 @@ window.scrollTo(0, (window.screen.availHeight) )
 /* Contact */
 window.scrollTo(0, (window.screen.availHeight*10) )
 ```
-
-##### Unintended Behavior
-
-- If swipe is long, it may hit Top or Bottom view without activating the action for selecting the respective view in the BottomNavigation bar. May be solved by adding a check at `scrollY === 0` and `scrolly >= window.scrollHeight - window.screen.availHeight -1`. Add a setTimeout for 1000ms, so it won't call too many times.
 
 ## ~~Tablet (width>=1024px && width <1366px) breakpoint~~
 
@@ -271,11 +264,11 @@ window.scrollTo(0, (window.screen.availHeight*10) )
   - ~~Got to either fix lack of connection between Header and Redux, or simply get rid of the mail icon. ~~
     - ~~Had forgotten to destructure action in component.~~
 
-### Mobile View Screen Sometimes Horizontaly Seems Swiped a Single Px Out of Bounds
-
 ## Finalize
 
-- Git rid of desktop view horizontal scrollbar
+- Add events for checkingif the view is correct in either BottomNavigation or Aside.
+  - starting focus doesn't allow keyboard events to be fired. Right now, i have to hit tab so the linkedin icon in the header will be focused. Only then keyboard events will fire, and the aside selected tab will follow accordingly.
+- ~~Git rid of desktop view horizontal scrollbar~~
 - Clean commented out code.
 - Create a full sketch of react-redux functionality
 
@@ -299,6 +292,8 @@ const theme = createMuiTheme({
   },
 });
 ```
+-  If swipe is long, it may hit Top or Bottom view without activating the action for selecting the respective view in the BottomNavigation bar. May be solved by adding a check at `scrollY === 0` and `scrolly >= window.scrollHeight - window.screen.availHeight -1`. Add a setTimeout for 1000ms, so it won't call too many times.
+
 
 ## Copyright & Trademark
 
