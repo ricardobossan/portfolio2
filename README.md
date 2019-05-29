@@ -1,8 +1,32 @@
-# Online Portfolio 2.0
+# Online Portfolio 2.0 <!-- omit in toc -->
+
+- [What is this project for?](#what-is-this-project-for)
+- [Credits](#credits)
+- [Steps](#steps)
+  - [Boilerplate](#boilerplate)
+  - [[Material UI Experimentation][mui-get-started]](#material-ui-experimentationmui-get-started)
+- [Available Scripts](#available-scripts)
+  - [`npm start`](#npm-start)
+  - [`npm test`](#npm-test)
+  - [`npm run build`](#npm-run-build)
+  - [`npm run eject`](#npm-run-eject)
+- [Learn More](#learn-more)
+  - [Code Splitting](#code-splitting)
+  - [Analyzing the Bundle Size](#analyzing-the-bundle-size)
+  - [Making a Progressive Web App](#making-a-progressive-web-app)
+  - [Advanced Configuration](#advanced-configuration)
+  - [Deployment](#deployment)
+  - [`npm run build` fails to minify](#npm-run-build-fails-to-minify)
 
 ## What is this project for?
 
 This is an online portfolio, to showcase my projects. It's going to be built with Reactjs and Material UI.
+
+## Credits
+
+[Handling scroll events in React - @kempsterrrr](https://www.kempsterrrr.xyz/handling-scroll-events-in-react/)
+
+Navigate between component's views upon user input.
 
 ## Steps
 
