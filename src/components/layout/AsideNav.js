@@ -68,7 +68,6 @@ class AsideNav extends React.Component {
           <ListItem
             onClick={() => this.handleViewSwitch(viewTop)}
             classes={{ primary: classes.asideItem }}
-            button
           >
             <ListItemText
               color="primary"
@@ -83,7 +82,6 @@ class AsideNav extends React.Component {
           <ListItem
             onClick={() => this.handleViewSwitch(viewProjects)}
             classes={{ primary: classes.asideItem }}
-            button
           >
             <ListItemText
               classes={
@@ -97,7 +95,6 @@ class AsideNav extends React.Component {
           <ListItem
             onClick={() => this.handleViewSwitch(viewContact)}
             classes={{ primary: classes.asideItem }}
-            button
           >
             <ListItemText
               classes={
