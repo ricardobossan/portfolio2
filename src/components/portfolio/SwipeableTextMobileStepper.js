@@ -75,7 +75,7 @@ class SwipeableTextMobileStepper extends React.Component {
   };
 
   render() {
-    const { classes, theme, projectIndex } = this.props;
+    const { classes, theme, projectIndex, projectPath } = this.props;
     const { activeStep } = this.state;
     const maxSteps = projectSteps[projectIndex].imgPath.length;
 
@@ -94,11 +94,13 @@ class SwipeableTextMobileStepper extends React.Component {
         >
           {projectSteps[projectIndex].imgPath.map(step => (
             <div key={step.label}>
-              <img
-                className={classes.img}
-                src={step}
-                alt={projectSteps[projectIndex].label}
-              />
+              <a href={projectPath}>
+                <img
+                  className={classes.img}
+                  src={step}
+                  alt={projectSteps[projectIndex].label}
+                />
+              </a>
             </div>
           ))}
         </AutoPlaySwipeableViews>

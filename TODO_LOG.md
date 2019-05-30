@@ -299,6 +299,7 @@ window.scrollTo(0, (window.screen.availHeight*10) )
           ```
 
 - ~~Git rid of desktop view horizontal scrollbar~~
+- ~~slideshow buttons shouldn't be encapsulated by anchor tags~~
 - Clean commented out code.
 - Create a full sketch of react-redux functionality
 

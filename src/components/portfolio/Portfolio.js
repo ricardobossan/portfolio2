@@ -10,9 +10,10 @@ export default () => {
       <Grid container spacing={8}>
         {projectSteps.map(project => (
           <Grid item lg={4} md={6} sm={6} xs={12}>
-            <a href={project.projectPath}>
-              <SwipeableTextMobileStepper projectIndex={project.id} />
-            </a>
+            <SwipeableTextMobileStepper
+              projectIndex={project.id}
+              projectPath={project.projectPath}
+            />
           </Grid>
         ))}
       </Grid>
