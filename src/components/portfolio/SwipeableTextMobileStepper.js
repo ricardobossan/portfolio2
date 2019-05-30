@@ -93,9 +93,10 @@ class SwipeableTextMobileStepper extends React.Component {
           enableMouseEvents
         >
           {projectSteps[projectIndex].imgPath.map(step => (
-            <div key={step.label}>
-              <a href={projectPath}>
+            <div tabIndex={-1} key={step.label}>
+              <a tabIndex={projectIndex === 0 ? 0 : -1} href={projectPath}>
                 <img
+                  tabIndex={-1}
                   className={classes.img}
                   src={step}
                   alt={projectSteps[projectIndex].label}
@@ -105,34 +106,37 @@ class SwipeableTextMobileStepper extends React.Component {
           ))}
         </AutoPlaySwipeableViews>
         <MobileStepper
+          tabIndex={-1}
           steps={maxSteps}
           position="static"
           activeStep={activeStep}
           className={classes.mobileStepper}
           nextButton={
             <Button
+              tabIndex={-1}
               size="small"
               onClick={this.handleNext}
               disabled={activeStep === maxSteps - 1}
             >
               Next
               {theme.direction === 'rtl' ? (
-                <KeyboardArrowLeft />
+                <KeyboardArrowLeft tabIndex={-1} />
               ) : (
-                <KeyboardArrowRight />
+                <KeyboardArrowRight tabIndex={-1} />
               )}
             </Button>
           }
           backButton={
             <Button
+              tabIndex={-1}
               size="small"
               onClick={this.handleBack}
               disabled={activeStep === 0}
             >
               {theme.direction === 'rtl' ? (
-                <KeyboardArrowRight />
+                <KeyboardArrowRight tabIndex={-1} />
               ) : (
-                <KeyboardArrowLeft />
+                <KeyboardArrowLeft tabIndex={-1} />
               )}
               Back
             </Button>
