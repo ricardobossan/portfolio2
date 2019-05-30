@@ -269,7 +269,7 @@ window.scrollTo(0, (window.screen.availHeight*10) )
 
   - ~~[Programmatically Managing Focus][progrmaticallyfocus]: Starting focus doesn't allow keyboard events to be fired. Right now, i have to hit tab so the linkedin icon in the header will be focused. Only then keyboard events will fire, and the aside selected tab will follow accordingly.~~
 
-    - ~~I think I'll solve this by using [useRef][useref], `tabIndex` and `.focus()`
+    - ~~I think I'll solve this by using [useRef][useref], `tabIndex` and `.focus()`~~
 
       - ~~Solution: [simply wrap an dom event listener on `document.body`, wrapped around an useEffect() React method][bodyeventreact].~~
 
@@ -300,6 +300,8 @@ window.scrollTo(0, (window.screen.availHeight*10) )
 
 - ~~Git rid of desktop view horizontal scrollbar~~
 - ~~slideshow buttons shouldn't be encapsulated by anchor tags~~
+- Build a production enviroment and host portfolio.
+- Set this portfolio to my portfolio domain.
 - Clean commented out code.
 - Create a full sketch of react-redux functionality
 
