@@ -16,7 +16,7 @@
   - [~~View "/"~~](#view-%22%22)
     - [~~Prototype~~](#prototype-2)
     - [~~Refinement~~](#refinement-1)
-  - [View "/portfolio"](#view-%22portfolio%22)
+  - [~~View "/portfolio"~~](#view-%22portfolio%22)
     - [~~Refinement~~](#refinement-2)
   - [~~View "/contact"~~](#view-%22contact%22)
     - [~~Prototype~~](#prototype-3)
@@ -32,9 +32,9 @@
 - [~~Desktop Breakpoint~~](#desktop-breakpoint)
   - [~~Prototype~~](#prototype-5)
   - [~~Refinement~~](#refinement-5)
-- [General Refinement](#general-refinement)
+- [~~General Refinement~~](#general-refinement)
   - [~~Social Icons Send User to My Social Profiles~~](#social-icons-send-user-to-my-social-profiles)
-- [Finalize](#finalize)
+- [Finalize 👈](#finalize-%F0%9F%91%88)
 - [Future Improvements](#future-improvements)
 - [Copyright & Trademark](#copyright--trademark)
 
@@ -127,7 +127,7 @@
   - ~~Insted, solve it by using Hidden tags around spans for each word `scroll | swipe`.~~
 - ~~Change hero image, because the first one was in russian, and displays the hardware's logo, which could bring problems.~~
 
-### View "/portfolio"
+### ~~View "/portfolio"~~
 
 #### ~~Refinement~~
 
@@ -237,6 +237,7 @@ window.scrollTo(0, (window.screen.availHeight*10) )
 - ~~Hide componet `Footer / NavigationBottom`.~~
 - ~~And replace it by mounting a left `<aside>`, or material ui equivalent component.~~
   - ~~Use [secondary, in themes][muithemes], for styling selected tab in `<aside>`~~
+    - ~~Check [tutorial][muithemetutorial]~~
     - ~~Use this JSS in the class, and make it be the iten's style when the redux state matches that item (found in [Mui docs for MenuItem][menuitem]):~~
 
 ```
@@ -248,26 +249,55 @@ window.scrollTo(0, (window.screen.availHeight*10) )
     },
 ```
 
-    - ~~Check [tutorial][muithemetutorial]~~
-
 - ~~`<aside>` should have the same functionality as the Footer~~
 
 ### ~~Refinement~~
 
 - ~~Do some styling to diferentiate the current view, so it won't be boring and so it is good looking~~.
 
-## General Refinement
+## ~~General Refinement~~
 
 ### ~~Social Icons Send User to My Social Profiles~~
 
 - ~~Header mail icon goes to the right view, but doesn't change BottomNavigation selected tab, like it's not connected to Redux. On Redux DevTools, no action is dispatched, when clicked on the icon~~
-  - ~~Got to either fix lack of connection between Header and Redux, or simply get rid of the mail icon. ~~
+  - ~~Got to either fix lack of connection between Header and Redux, or simply get rid of the mail icon.~~
     - ~~Had forgotten to destructure action in component.~~
 
-## Finalize
+## Finalize 👈
 
-- Add events for checkingif the view is correct in either BottomNavigation or Aside.
-  - starting focus doesn't allow keyboard events to be fired. Right now, i have to hit tab so the linkedin icon in the header will be focused. Only then keyboard events will fire, and the aside selected tab will follow accordingly.
+- ~~Add events for checkingif the view is correct in either BottomNavigation or Aside.~~
+
+  - ~~[Programmatically Managing Focus][progrmaticallyfocus]: Starting focus doesn't allow keyboard events to be fired. Right now, i have to hit tab so the linkedin icon in the header will be focused. Only then keyboard events will fire, and the aside selected tab will follow accordingly.~~
+
+    - ~~I think I'll solve this by using [useRef][useref], `tabIndex` and `.focus()`
+
+      - ~~Solution: [simply wrap an dom event listener on `document.body`, wrapped around an useEffect() React method][bodyeventreact].~~
+
+        - ~~In order to prevent memory leaks, I had to wrap the event handler inside another function, who would first call removeEventListener on this new function, who is now the event handler:~~
+
+          **Avoiding Memory Leaks**
+
+          ```
+            const handleKey = e =>
+              e.key === 'ArrowUp' ||
+              e.key === 'ArrowDown' ||
+              e.key === 'PageUp' ||
+              e.key === 'PageDown' ||
+              e.key === 'Home' ||
+              e.key === 'End'
+                ? handleScroll()
+                : null;
+
+            const handleKeyWrapper = e => {
+              document.body.removeEventListener('keyup', handleKeyWrapper, false);
+              handleKey(e);
+            };
+
+            useEffect(() => {
+              document.body.addEventListener('keyup', handleKeyWrapper);
+            });
+          ```
+
 - ~~Git rid of desktop view horizontal scrollbar~~
 - Clean commented out code.
 - Create a full sketch of react-redux functionality
@@ -292,8 +322,8 @@ const theme = createMuiTheme({
   },
 });
 ```
--  If swipe is long, it may hit Top or Bottom view without activating the action for selecting the respective view in the BottomNavigation bar. May be solved by adding a check at `scrollY === 0` and `scrolly >= window.scrollHeight - window.screen.availHeight -1`. Add a setTimeout for 1000ms, so it won't call too many times.
 
+- If swipe is long, it may hit Top or Bottom view without activating the action for selecting the respective view in the BottomNavigation bar. May be solved by adding a check at `scrollY === 0` and `scrolly >= window.scrollHeight - window.screen.availHeight -1`. Add a setTimeout for 1000ms, so it won't call too many times.
 
 ## Copyright & Trademark
 
@@ -310,3 +340,6 @@ const theme = createMuiTheme({
 [react-mail-form]: https://www.npmjs.com/package/react-mail-form
 [mailaction]: https://medium.com/@sgobinda007/send-mail-from-your-reactjs-app-c6561bd5c22f
 [refs]: https://reactjs.org/docs/refs-and-the-dom.html
+[progrmaticallyfocus]: https://reactjs.org/docs/accessibility.html#programmatically-managing-focus
+[useref]: https://reactjs.org/docs/hooks-reference.html#useref
+[bodyeventreact]: https://stackoverflow.com/questions/32485520/how-can-i-add-a-click-handler-to-body-from-within-a-react-component

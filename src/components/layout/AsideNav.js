@@ -65,6 +65,7 @@ class AsideNav extends React.Component {
       <div>
         <List component="nav" className={classes.root}>
           <ListItem
+            tabIndex={1}
             onClick={() => this.handleViewSwitch(viewTop)}
             classes={{ primary: classes.asideItem }}
           >
@@ -79,6 +80,7 @@ class AsideNav extends React.Component {
             />
           </ListItem>
           <ListItem
+            tabIndex={1}
             onClick={() => this.handleViewSwitch(viewProjects)}
             classes={{ primary: classes.asideItem }}
           >
@@ -92,6 +94,7 @@ class AsideNav extends React.Component {
             />
           </ListItem>
           <ListItem
+            tabIndex={1}
             onClick={() => this.handleViewSwitch(viewContact)}
             classes={{ primary: classes.asideItem }}
           >

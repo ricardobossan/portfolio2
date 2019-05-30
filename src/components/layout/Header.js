@@ -69,6 +69,7 @@ function Header(props) {
           <Grid className={classes.iconContainer} container direction="row">
             <Grid xs={3} md={2} lg={1} item>
               <Link
+                tabIndex={-1}
                 href="https://www.linkedin.com/in/ricardo-bossan"
                 underline="none"
               >
@@ -81,14 +82,22 @@ function Header(props) {
               </Link>
             </Grid>
             <Grid xs={3} md={2} lg={1} item>
-              <Link href="https://github.com/ricardobossan" underline="none">
+              <Link
+                tabIndex={-1}
+                href="https://github.com/ricardobossan"
+                underline="none"
+              >
                 <IconButton className={classes.iconButton} aria-label="GitHub">
                   <i className="fab fa-github" />
                 </IconButton>
               </Link>
             </Grid>
             <Grid xs={3} md={2} lg={1} item>
-              <Link href="https://twitter.com/BossanRicardo" underline="none">
+              <Link
+                tabIndex={-1}
+                href="https://twitter.com/BossanRicardo"
+                underline="none"
+              >
                 <IconButton className={classes.iconButton} aria-label="Twitter">
                   <i className="fab fa-twitter" />
                 </IconButton>

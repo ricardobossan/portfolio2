@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
-import { red, purple } from '@material-ui/core/colors';
 /* import { HashRouter as Router, Route, Switch } from 'react-router-dom';
  */
 import '../styles/styles.css';
@@ -38,7 +37,7 @@ function App(props) {
     action();
   };
 
-  const handleKey = (e /*  console.log('event is firing.', e.key); */) =>
+  const handleKey = e =>
     e.key === 'ArrowUp' ||
     e.key === 'ArrowDown' ||
     e.key === 'PageUp' ||
@@ -48,13 +47,21 @@ function App(props) {
       ? handleScroll()
       : null;
 
+  const handleKeyWrapper = e => {
+    document.body.removeEventListener('keyup', handleKeyWrapper, false);
+    handleKey(e);
+  };
+
+  useEffect(() => {
+    document.body.addEventListener('keyup', handleKeyWrapper);
+  });
+
   return (
     <div
-      autoFocus="true"
       style={{ overflow: 'hidden' }}
       className="scroller"
-      onKeyDown={event => handleKey(event)}
-      onTouchMove={handleScroll}
+      /*       onKeyDown={event => handleKey(event)}
+       */ onTouchMove={handleScroll}
       onWheel={handleScroll}
       onScroll={handleScroll}
     >
