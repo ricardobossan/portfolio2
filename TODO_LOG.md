@@ -300,13 +300,15 @@ window.scrollTo(0, (window.screen.availHeight*10) )
 
 - ~~Git rid of desktop view horizontal scrollbar~~
 - ~~slideshow buttons shouldn't be encapsulated by anchor tags~~
-- Build a production enviroment and host portfolio.
+- ~~Build a production enviroment~~
+- host portfolio's production enviroment.
 - Set this portfolio to my portfolio domain.
 - Clean commented out code.
-- Create a full sketch of react-redux functionality
+- Create a full sketch of `react-redux` (specifically) functionality
 
 ## Future Improvements
 
+- Clicking on the mail icon on the header focuses on the name input in the form.
 - Form validation for email TextField.
 - [Use Refs for DOM](https://codesandbox.io/s/v6948pww5y?from-embed)
 - [Use react hooks with redux, to have global state with functional components](https://medium.freecodecamp.org/how-to-integrate-react-hooks-into-your-project-without-changing-your-redux-code-974e6f70f0b0?source=bookmarks---------0---------------------)

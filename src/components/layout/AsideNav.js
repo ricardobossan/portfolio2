@@ -53,6 +53,15 @@ class AsideNav extends React.Component {
     });
   };
 
+  handleTabHit = (e, action) => {
+    console.log('raised from AsideNav to App', e.key);
+    if (e.key === 'Enter') {
+      this.handleViewSwitch(action);
+    } else {
+      return null;
+    }
+  };
+
   render() {
     const {
       viewSelect,
@@ -65,6 +74,7 @@ class AsideNav extends React.Component {
       <div>
         <List component="nav" className={classes.root}>
           <ListItem
+            onKeyPress={event => this.handleTabHit(event, viewTop)}
             tabIndex={1}
             onClick={() => this.handleViewSwitch(viewTop)}
             classes={{ primary: classes.asideItem }}
@@ -80,6 +90,7 @@ class AsideNav extends React.Component {
             />
           </ListItem>
           <ListItem
+            onKeyPress={event => this.handleTabHit(event, viewProjects)}
             tabIndex={1}
             onClick={() => this.handleViewSwitch(viewProjects)}
             classes={{ primary: classes.asideItem }}
@@ -94,6 +105,7 @@ class AsideNav extends React.Component {
             />
           </ListItem>
           <ListItem
+            onKeyPress={event => this.handleTabHit(event, viewContact)}
             tabIndex={1}
             onClick={() => this.handleViewSwitch(viewContact)}
             classes={{ primary: classes.asideItem }}
