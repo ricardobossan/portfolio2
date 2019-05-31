@@ -4,7 +4,7 @@ import { TextField, Typography, Button, Link } from '@material-ui/core';
 
 const styles = theme => ({
   root: {
-    height: '120vh',
+    height: '100vh',
     paddingTop: '70px',
     background: '#2d5f72'
   },
@@ -72,7 +72,8 @@ class Contact extends React.Component {
   render() {
     const { classes } = this.props;
     const { Name, Email, Message } = this.state;
-    const subject = 'Mail From Portfolio';
+    const subject = 'Mail From Portfolio',
+      body = `${Message} ###################### SENT BY ${Name} ==> EMAIL: ${Email}`;
     return (
       <div className={classes.root}>
         <Typography className={classes.contactMe} variant="h3">
@@ -129,7 +130,7 @@ class Contact extends React.Component {
             )}
  */
             onClick={this.handleEraseFields}
-            href={`mailto:mail@ricardobossan.com?subject=${subject}&body=${Message}`}
+            href={`mailto:mail@ricardobossan.com?subject=${subject}&body=${body}`}
             className={classes.sendButton}
             variant="outlined"
             elevation={1}

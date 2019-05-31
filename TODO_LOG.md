@@ -308,6 +308,11 @@ window.scrollTo(0, (window.screen.availHeight*10) )
     - Contact links to social network services are cut behind the footer at the bottom of the page, and can't be swiped to (research [1][mailmobile]).
     - Email form doesn't work on mobile.
 
+      - **SOLVED**:
+
+        - Material UI solution: `<Button>'s` `href`property: https://material-ui.com/api/button/
+        - Confirmed by the common `<a>`tag approach: https://stackoverflow.com/questions/18870154/mailto-attribute-does-not-work-on-mobile#answer-18870188
+
       - **Method #0**: https://www.sitepoint.com/sending-email-using-node-js/
         - https://github.com/nodemailer/nodemailer#available-transports
         - https://github.com/nodemailer/nodemailer-sendmail-transport
