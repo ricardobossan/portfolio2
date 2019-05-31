@@ -4,7 +4,7 @@ import { TextField, Typography, Button, Link } from '@material-ui/core';
 
 const styles = theme => ({
   root: {
-    height: '100vh',
+    height: '120vh',
     paddingTop: '70px',
     background: '#2d5f72'
   },
@@ -55,7 +55,7 @@ class Contact extends React.Component {
 
   /*   inputChange = (e) => this.setState({e.target.name})
    */
-  submitForm = () => {
+  handleEraseFields = () => {
     setTimeout(() => this.setState({ Name: '', Email: '', Message: '' }), 1000);
     /*     this.nameInput.current.state = '';
     this.emailInput.current.state = '';
@@ -79,10 +79,7 @@ class Contact extends React.Component {
           Contact Me
         </Typography>
         <form
-          onSubmit={this.submitForm}
           className={classes.container}
-          action={`mailto:mail@ricardobossan.com?subject=${subject}&body=${Message}`}
-          method="post"
           enctype="text/plain"
           autoComplete="off"
         >
@@ -130,7 +127,9 @@ class Contact extends React.Component {
                 Message
               }}`
             )}
- */ type="submit"
+ */
+            onClick={this.handleEraseFields}
+            href={`mailto:mail@ricardobossan.com?subject=${subject}&body=${Message}`}
             className={classes.sendButton}
             variant="outlined"
             elevation={1}

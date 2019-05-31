@@ -302,10 +302,18 @@ window.scrollTo(0, (window.screen.availHeight*10) )
 - ~~slideshow buttons shouldn't be encapsulated by anchor tags~~
 - ~~Build a production enviroment~~
 - ~~host portfolio's production enviroment.~~
+
   - Issues:
+
     - Contact links to social network services are cut behind the footer at the bottom of the page, and can't be swiped to (research [1][mailmobile]).
     - Email form doesn't work on mobile.
-      - ## Method #1: SMTPJS - https://smtpjs.com/
+
+      - **Method #0**: https://www.sitepoint.com/sending-email-using-node-js/
+        - https://github.com/nodemailer/nodemailer#available-transports
+        - https://github.com/nodemailer/nodemailer-sendmail-transport
+        - https://github.com/nodemailer/nodemailer-ses-transport
+        - https://github.com/sendgrid/sendgrid-nodejs
+      - **Method #1**: SMTPJS - https://smtpjs.com/
 
       ```
       Security
