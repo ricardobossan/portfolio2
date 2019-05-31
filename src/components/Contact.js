@@ -72,6 +72,7 @@ class Contact extends React.Component {
   render() {
     const { classes } = this.props;
     const { Name, Email, Message } = this.state;
+    const subject = 'Mail From Portfolio';
     return (
       <div className={classes.root}>
         <Typography className={classes.contactMe} variant="h3">
@@ -80,7 +81,7 @@ class Contact extends React.Component {
         <form
           onSubmit={this.submitForm}
           className={classes.container}
-          action="mailto:mail@ricardobossan.com"
+          action={`mailto:mail@ricardobossan.com?subject=${subject}&body=${Message}`}
           method="post"
           enctype="text/plain"
           autoComplete="off"
@@ -122,7 +123,14 @@ class Contact extends React.Component {
             margin="normal"
           />
           <Button
-            type="submit"
+            /*             onClick={window.open(
+              `mailto:mail@ricardobossan.com?subject="Mail From Portfolio"&body=${{
+                Name,
+                Email,
+                Message
+              }}`
+            )}
+ */ type="submit"
             className={classes.sendButton}
             variant="outlined"
             elevation={1}

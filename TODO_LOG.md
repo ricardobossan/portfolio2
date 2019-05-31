@@ -301,7 +301,123 @@ window.scrollTo(0, (window.screen.availHeight*10) )
 - ~~Git rid of desktop view horizontal scrollbar~~
 - ~~slideshow buttons shouldn't be encapsulated by anchor tags~~
 - ~~Build a production enviroment~~
-- host portfolio's production enviroment.
+- ~~host portfolio's production enviroment.~~
+  - Issues:
+    - Contact links to social network services are cut behind the footer at the bottom of the page, and can't be swiped to (research [1][mailmobile]).
+    - Email form doesn't work on mobile.
+      - ## Method #1: SMTPJS - https://smtpjs.com/
+
+      ```
+      Security
+      Whoa!, wait a minute. I don't want my SMTP credentials visible to the world!
+      We've thought of that, so instead you can encrypt your SMTP credentials, and lock it to a single domain, and pass a secure token instead of the credentials instead, for example:
+
+      Email.send({
+          SecureToken : "C973D7AD-F097-4B95-91F4-40ABC5567812",
+          To : 'them@website.com',
+          From : "you@isp.com",
+          Subject : "This is the subject",
+          Body : "And this is the body"
+      }).then(
+        message => alert(message)
+      );
+
+      Note: By default, the SMTP connection is secure (STARTTLS) and over port 25. If you need to use an SMTP server that does not accepts secure connections, or in on a non-standard port, like 587, then use the button above "Encrypt your SMTP Credentials" to store advanced configuration.
+      Need an SMTP server:
+      If you don't have access to an SMTP server, you can create one by opening an account at Elastic Email.com, then pressing Settings > SMTP/API, and using the SMTP configuration shown.
+
+      ```
+
+      ## Method #2
+
+      ### Reference
+
+      - https://stackoverflow.com/questions/14268796/how-do-i-send-email-with-javascript-without-opening-the-mail-client#answer-27244274
+
+      ### Directly From Client (Should start with this one!)
+
+      Send an email using only JavaScript
+
+      in short:
+
+      1. register for Mandrill to get an API key
+      2. load jQuery
+      3. use \$.ajax to send an email
+         Like this -
+
+      function sendMail() {
+      \$.ajax({
+      type: 'POST',
+      url: 'https://mandrillapp.com/api/1.0/messages/send.json',
+      data: {
+      'key': 'YOUR API KEY HERE',
+      'message': {
+      'from_email': 'YOUR@EMAIL.HERE',
+      'to': [
+      {
+      'email': 'RECIPIENT@EMAIL.HERE',
+      'name': 'RECIPIENT NAME (OPTIONAL)',
+      'type': 'to'
+      }
+      ],
+      'autotext': 'true',
+      'subject': 'YOUR SUBJECT HERE!',
+      'html': 'YOUR EMAIL CONTENT HERE! YOU CAN USE HTML!'
+      }
+      }
+      }).done(function(response) {
+      console.log(response); // if you're into that sorta thing
+      });
+      }
+      https://medium.com/design-startups/b53319616782
+
+      Note: Keep in mind that your API key is visible to anyone, so any malicious user may use your key to send out emails that can eat up your quota.
+
+      ### Indirect via Your Server - secure
+
+      To overcome the above vulnerability, you can modify your own server to send the email after session based authentication.
+
+      node.js - https://www.npmjs.org/package/node-mandrill
+
+      var mandrill = require('node-mandrill')('<your API Key>');
+
+      function sendEmail ( \_name, \_email, \_subject, \_message) {
+      mandrill('/messages/send', {
+      message: {
+      to: [{email: _email , name: _name}],
+      from_email: 'noreply@yourdomain.com',
+      subject: \_subject,
+      text: \_message
+      }
+      }, function(error, response){
+      if (error) console.log( error );
+      else console.log(response);
+      });
+      }
+
+      // define your own email api which points to your server.
+
+      app.post( '/api/sendemail/', function(req, res){
+
+          var _name = req.body.name;
+          var _email = req.body.email;
+          var _subject = req.body.subject;
+          var _messsage = req.body.message;
+
+          //implement your spam protection or checks.
+
+          sendEmail ( _name, _email, _subject, _message );
+
+      });
+      and then use use \$.ajax on client to call your email API.
+
+      shareedit
+      edited Apr 20 '15 at 5:16
+      answered Dec 2 '14 at 7:46
+
+      rahulroy9202
+      2,07912439
+
 - Set this portfolio to my portfolio domain.
 - Clean commented out code.
 - Create a full sketch of `react-redux` (specifically) functionality
@@ -348,3 +464,4 @@ const theme = createMuiTheme({
 [progrmaticallyfocus]: https://reactjs.org/docs/accessibility.html#programmatically-managing-focus
 [useref]: https://reactjs.org/docs/hooks-reference.html#useref
 [bodyeventreact]: https://stackoverflow.com/questions/32485520/how-can-i-add-a-click-handler-to-body-from-within-a-react-component
+[mailmobile]: https://stackoverflow.com/questions/5677963/mailto-link-in-email-to-start-a-new-email?rq=1
