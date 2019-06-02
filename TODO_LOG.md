@@ -306,7 +306,7 @@ window.scrollTo(0, (window.screen.availHeight*10) )
   - Issues:
 
     - Contact links to social network services are cut behind the footer at the bottom of the page, and can't be swiped to (research [1][mailmobile]).
-    - Email form doesn't work on mobile.
+    - ~~Email form doesn't work on mobile.~~
 
       - **SOLVED**:
 

@@ -140,7 +140,7 @@ class Contact extends React.Component {
             </Typography>
           </Button>
         </form>
-        <div style={{ marginTop: '50px' }}>
+        <div style={{ marginTop: '25px' }}>
           <Link
             tabIndex={-1}
             href="https://www.linkedin.com/in/ricardo-bossan"
