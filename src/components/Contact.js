@@ -73,7 +73,7 @@ class Contact extends React.Component {
     const { classes } = this.props;
     const { Name, Email, Message } = this.state;
     const subject = 'Mail From Portfolio',
-      body = `${Message} ###################### SENT BY ${Name} ==> EMAIL: ${Email}`;
+      body = `Name: ${Name}%0D%0AEmail: ${Email}%0D%0A%0D%0AMessage: ${Message}`;
     return (
       <div className={classes.root}>
         <Typography className={classes.contactMe} variant="h3">
