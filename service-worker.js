@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/ricardobossan/portfolio2/precache-manifest.e6cf268a5c6cfc9b77afd0ca9f7cf9c7.js"
+  "/portfolio2/precache-manifest.b49e849c232c77f69ddbadb30e450392.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/ricardobossan/portfolio2/index.html", {
+workbox.routing.registerNavigationRoute("/portfolio2/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
