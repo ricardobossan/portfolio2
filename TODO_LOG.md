@@ -303,7 +303,7 @@ window.scrollTo(0, (window.screen.availHeight*10) )
 - ~~Build a production enviroment~~
 - ~~host portfolio's production enviroment.~~
 - ~~desktop: selected property on ListItem, if selected.~~
-- Change hero image's text shadow to a barelly noticiable color.
+- ~~Change hero image's text shadow to a barelly noticiable color.~~
 - remove scrollbar
 
   - Issues:

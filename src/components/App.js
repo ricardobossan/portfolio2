@@ -11,7 +11,11 @@ import theme from './themes/theme';
 import { Header, AsideNav, Hero, Footer, MyProjects } from './layout/';
 import Contact from './Contact';
 
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import {
+  MuiThemeProvider,
+  createMuiTheme,
+  withStyles
+} from '@material-ui/core/styles';
 
 import { swipeTop, swipeProjects, swipeContact } from '../actions';
 
@@ -19,6 +23,21 @@ import Hidden from '@material-ui/core/Hidden';
 
 /** @theme palette https://material.io/tools/color/#!/?view.left=1&view.right=0&primary.color=2d5e72&secondary.color=0d3645 */
 const mainTheme = createMuiTheme(theme);
+
+const styles = theme => ({
+  '@global': {
+    '*::-webkit-scrollbar': {
+      width: 0
+    },
+    '*::-webkit-scrollbar-track': {
+      '-webkit-box-shadow': 'inset 0 0 6px rgba(0,0,0,0.00)'
+    },
+    '*::-webkit-scrollbar-thumb': {
+      backgroundColor: 'rgba(0,0,0,.1)',
+      outline: '1px solid slategrey'
+    }
+  }
+});
 
 function App(props) {
   const { swipeTop, swipeProjects, swipeContact } = props;
@@ -69,7 +88,12 @@ function App(props) {
         <React.Fragment>
           <CssBaseline />
           <Header />
-          <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row'
+            }}
+          >
             <Hidden mdDown>
               <Grid
                 style={{
@@ -108,4 +132,4 @@ const mapDispatchToProps = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(App);
+)(withStyles(styles)(App));
