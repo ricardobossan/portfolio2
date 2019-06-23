@@ -31,7 +31,7 @@ const styles = theme => ({
   root: {
     margin: 'auto',
     flexGrow: 1,
-    borderBottom: '5px solid rgba(0,0,0,0.14)'
+    borderBottom: '4px solid rgba(0,0,0,0.14)'
   },
   header: {
     display: 'flex',
