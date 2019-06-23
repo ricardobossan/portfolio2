@@ -38,7 +38,9 @@ const styles = theme => ({
     background: '#ffffff00'
   },
   scrollDown: {
-    textShadow: '0 0 3px #000, 0 0 5px #000',
+    textShadow: `0 0 3px ${theme.palette.secondary.light}, 0 0 3px ${
+      theme.palette.secondary.light
+    }`,
     textAlign: 'center'
   },
   ChevronTripleDown: {
