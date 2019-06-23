@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -41,8 +41,12 @@ const styles = theme => ({
   }
 });
 
-class AsideNav extends React.Component {
-  handleViewSwitch = async action => {
+function AsideNav(props) {
+  const [selectedTop, setSelectedTop] = useState(false);
+  const [selectedProjects, setSelectedProjects] = useState(false);
+  const [selectedContact, setSelectedContact] = useState(false);
+
+  const handleViewSwitch = async action => {
     // "Gambiarra", to call action and, at the same time, save one if it's returned values for scrolling to it, without using async logic.
     const actionReturnValues = action();
     // Side effect. Need applyMiddleware and react-thunk, to make the dispatch asyncronous, conditioning side effects to it
@@ -53,76 +57,88 @@ class AsideNav extends React.Component {
     });
   };
 
-  handleTabHit = (e, action) => {
-    console.log('raised from AsideNav to App', e.key);
+  const handleTabHit = (e, action) => {
     if (e.key === 'Enter') {
-      this.handleViewSwitch(action);
+      handleViewSwitch(action);
     } else {
       return null;
     }
   };
 
-  render() {
-    const {
-      viewSelect,
-      viewTop,
-      viewProjects,
-      viewContact,
-      classes
-    } = this.props;
-    return (
-      <div>
-        <List component="nav" className={classes.root}>
-          <ListItem
-            onKeyPress={event => this.handleTabHit(event, viewTop)}
-            tabIndex={1}
-            onClick={() => this.handleViewSwitch(viewTop)}
-            classes={{ primary: classes.asideItem }}
-          >
-            <ListItemText
-              color="primary"
-              classes={
-                viewSelect.view === 0
-                  ? { primary: classes.asideItemTextSelected }
-                  : { primary: classes.asideItemText }
-              }
-              primary="Top"
-            />
-          </ListItem>
-          <ListItem
-            onKeyPress={event => this.handleTabHit(event, viewProjects)}
-            tabIndex={1}
-            onClick={() => this.handleViewSwitch(viewProjects)}
-            classes={{ primary: classes.asideItem }}
-          >
-            <ListItemText
-              classes={
-                viewSelect.view === 1
-                  ? { primary: classes.asideItemTextSelected }
-                  : { primary: classes.asideItemText }
-              }
-              primary="Projects"
-            />
-          </ListItem>
-          <ListItem
-            onKeyPress={event => this.handleTabHit(event, viewContact)}
-            tabIndex={1}
-            onClick={() => this.handleViewSwitch(viewContact)}
-            classes={{ primary: classes.asideItem }}
-          >
-            <ListItemText
-              classes={
-                viewSelect.view === 2
-                  ? { primary: classes.asideItemTextSelected }
-                  : { primary: classes.asideItemText }
-              }
-              primary="Contact"
-            />
-          </ListItem>
-        </List>
-      </div>
-    );
-  }
+  const { viewSelect, viewTop, viewProjects, viewContact, classes } = props;
+  return (
+    <div>
+      <List component="nav" className={classes.root}>
+        <ListItem
+          selected={selectedTop}
+          onFocus={() => {
+            setSelectedTop(true);
+          }}
+          onBlur={() => {
+            setSelectedTop(false);
+          }}
+          onKeyPress={event => handleTabHit(event, viewTop)}
+          tabIndex={1}
+          onClick={() => handleViewSwitch(viewTop)}
+          classes={{ primary: classes.asideItem }}
+        >
+          <ListItemText
+            color="primary"
+            classes={
+              viewSelect.view === 0
+                ? { primary: classes.asideItemTextSelected }
+                : { primary: classes.asideItemText }
+            }
+            primary="Top"
+          />
+        </ListItem>
+        <ListItem
+          selected={selectedProjects}
+          onFocus={() => {
+            setSelectedProjects(true);
+          }}
+          onBlur={() => {
+            setSelectedProjects(false);
+          }}
+          onKeyPress={event => handleTabHit(event, viewProjects)}
+          tabIndex={1}
+          onClick={() => handleViewSwitch(viewProjects)}
+          classes={{ primary: classes.asideItem }}
+        >
+          <ListItemText
+            classes={
+              viewSelect.view === 1
+                ? { primary: classes.asideItemTextSelected }
+                : { primary: classes.asideItemText }
+            }
+            primary="Projects"
+          />
+        </ListItem>
+        <ListItem
+          selected={selectedContact}
+          onFocus={() => {
+            setSelectedContact(true);
+          }}
+          onBlur={() => {
+            setSelectedContact(false);
+          }}
+          onKeyPress={event => handleTabHit(event, viewContact)}
+          tabIndex={1}
+          onClick={() => handleViewSwitch(viewContact)}
+          classes={{ primary: classes.asideItem }}
+        >
+          <ListItemText
+            classes={
+              viewSelect.view === 2
+                ? { primary: classes.asideItemTextSelected }
+                : { primary: classes.asideItemText }
+            }
+            primary="Contact"
+          />
+        </ListItem>
+      </List>
+    </div>
+  );
 }
 
 AsideNav.propTypes = {
