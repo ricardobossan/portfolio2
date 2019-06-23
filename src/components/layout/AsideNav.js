@@ -73,8 +73,18 @@ function AsideNav(props) {
           selected={selectedTop}
           onFocus={() => {
             setSelectedTop(true);
+            setSelectedProjects(false);
+            setSelectedContact(false);
           }}
           onBlur={() => {
+            setSelectedTop(false);
+          }}
+          onMouseEnter={() => {
+            setSelectedTop(true);
+            setSelectedProjects(false);
+            setSelectedContact(false);
+          }}
+          onMouseLeave={() => {
             setSelectedTop(false);
           }}
           onKeyPress={event => handleTabHit(event, viewTop)}
@@ -96,8 +106,18 @@ function AsideNav(props) {
           selected={selectedProjects}
           onFocus={() => {
             setSelectedProjects(true);
+            setSelectedTop(false);
+            setSelectedContact(false);
           }}
           onBlur={() => {
+            setSelectedProjects(false);
+          }}
+          onMouseEnter={() => {
+            setSelectedProjects(true);
+            setSelectedTop(false);
+            setSelectedContact(false);
+          }}
+          onMouseLeave={() => {
             setSelectedProjects(false);
           }}
           onKeyPress={event => handleTabHit(event, viewProjects)}
@@ -118,8 +138,18 @@ function AsideNav(props) {
           selected={selectedContact}
           onFocus={() => {
             setSelectedContact(true);
+            setSelectedTop(false);
+            setSelectedProjects(false);
           }}
           onBlur={() => {
+            setSelectedContact(false);
+          }}
+          onMouseEnter={() => {
+            setSelectedContact(true);
+            setSelectedTop(false);
+            setSelectedProjects(false);
+          }}
+          onMouseLeave={() => {
             setSelectedContact(false);
           }}
           onKeyPress={event => handleTabHit(event, viewContact)}
